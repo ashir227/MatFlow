@@ -52,10 +52,7 @@ class LoginScr extends StatelessWidget {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(
-                      color: Appcolor.focusedBorder,
-                      width: 1.5,
-                    ),
+                    borderSide: BorderSide(color: Appcolor.Flow, width: 1.5),
                   ),
                 ),
               ),

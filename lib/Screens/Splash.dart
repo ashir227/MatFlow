@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:matflow/Screens/Dashboard.dart';
 import 'package:matflow/Screens/login.dart';
 
 class SplashScr extends StatefulWidget {
@@ -14,10 +16,19 @@ class _SplashScrState extends State<SplashScr> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => LoginScr()),
-      );
+      var box = Hive.box("loginbox");
+      bool isLogin = box.get("isLogin", defaultValue: false);
+      if (isLogin) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => DashBoard()),
+        );
+      } else {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => LoginScr()),
+        );
+      }
     });
   }
 
