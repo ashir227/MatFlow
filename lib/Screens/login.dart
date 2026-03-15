@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/themes.dart';
+import 'package:matflow/Screens/Dashboard.dart';
 import 'package:matflow/providers/loginProvider.dart';
 import 'package:provider/provider.dart';
 
 class LoginScr extends StatelessWidget {
   LoginScr({super.key});
-  final emailcontroller = TextEditingController();
+  final namecontroller = TextEditingController();
   final passwordcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class LoginScr extends StatelessWidget {
               SizedBox(height: 27),
 
               TextField(
-                controller: emailcontroller,
+                controller: namecontroller,
                 decoration: InputDecoration(
                   // enabledBorder: ,
                   border: OutlineInputBorder(
@@ -59,7 +60,9 @@ class LoginScr extends StatelessWidget {
               SizedBox(height: 75),
               CustomButton.elevatedB(
                 onPressed: () {
-                  // Provider.of<Loginprovider>(context).login(name, password)
+                  bool result = Provider.of<Loginprovider>(
+                    context,
+                  ).login(namecontroller.text, passwordcontroller.text);
                 },
 
                 Bcolor: Appcolor.Mat,

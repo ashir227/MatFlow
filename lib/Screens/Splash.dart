@@ -17,7 +17,7 @@ class _SplashScrState extends State<SplashScr> {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
       var box = Hive.box("loginbox");
-      bool isLogin = box.get("isLogin", defaultValue: false);
+      bool isLogin = box.get("islogin", defaultValue: false);
       if (isLogin) {
         Navigator.pushReplacement(
           context,

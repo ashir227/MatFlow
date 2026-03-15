@@ -5,8 +5,12 @@ import 'package:path_provider/path_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   var directory = await getApplicationDocumentsDirectory();
   Hive.init(directory.path);
+
+  await Hive.openBox("loginBox"); // ⭐ ye line missing thi
+
   runApp(const Myapp());
 }
 
