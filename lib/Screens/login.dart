@@ -61,8 +61,20 @@ class LoginScr extends StatelessWidget {
               CustomButton.elevatedB(
                 onPressed: () {
                   bool result = Provider.of<Loginprovider>(
+                    listen: false,
                     context,
                   ).login(namecontroller.text, passwordcontroller.text);
+
+                  if (result) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => DashBoard()),
+                    );
+                  } else {
+                    ScaffoldMessenger.of(
+                      context,
+                    ).showSnackBar(SnackBar(content: Text("data")));
+                  }
                 },
 
                 Bcolor: Appcolor.Mat,
