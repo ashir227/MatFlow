@@ -61,8 +61,8 @@ class LoginScr extends StatelessWidget {
               CustomButton.elevatedB(
                 onPressed: () {
                   bool result = Provider.of<Loginprovider>(
-                    listen: false,
                     context,
+                    listen: false,
                   ).login(namecontroller.text, passwordcontroller.text);
 
                   if (result) {
