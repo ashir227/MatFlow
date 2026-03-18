@@ -8,7 +8,22 @@ class DashBoard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Appcolor.Mat),
-      drawer: Drawer(backgroundColor: Appcolor.background),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Appcolor.Mat, Appcolor.gradientEnd],
+                ),
+                color: Appcolor.background,
+              ),
+              child: Text("data"),
+            ),
+          ],
+        ),
+        backgroundColor: Appcolor.background,
+      ),
       body: Column(children: []),
     );
   }
