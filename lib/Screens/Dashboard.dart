@@ -7,11 +7,9 @@ class DashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Appcolor.Mat,
-        title: Drawer(backgroundColor: Appcolor.background),
-      ),
-      body: Column(children: [Drawer(backgroundColor: Appcolor.Mat)]),
+      appBar: AppBar(backgroundColor: Appcolor.Mat),
+      drawer: Drawer(backgroundColor: Appcolor.background),
+      body: Column(children: []),
     );
   }
 }
