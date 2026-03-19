@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:matflow/Core/buttons/elevated.dart';
+import 'package:matflow/Core/Widgets/icon.dart';
+// import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/themes.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -71,6 +72,14 @@ class AppDrawer extends StatelessWidget {
             leading: CustomIcon(icon: Icons.receipt_long_rounded),
             title: Text("Reports", style: TextStyle(fontSize: 18)),
             onTap: () {},
+          ),
+          SizedBox(height: 40),
+          ListTile(
+            leading: CustomIcon(
+              icon: Icons.logout,
+              color: Appcolor.logoutColor,
+            ),
+            title: Text("Logout"),
           ),
         ],
       ),
