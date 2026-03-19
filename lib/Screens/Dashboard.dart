@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/themes.dart';
 
 class DashBoard extends StatelessWidget {
@@ -21,19 +22,10 @@ class DashBoard extends StatelessWidget {
               ),
               child: Text("data", style: TextStyle(color: Appcolor.background)),
             ),
+            ListTile(leading: CustomIcon(icon: Icons.dashboard_outlined)),
+            ListTile(leading: CustomIcon(icon: Icons.inventory_2_outlined)),
             ListTile(
-              leading: Icon(
-                Icons.dashboard,
-                color: Appcolor.iconFlow,
-                size: 35,
-              ),
-            ),
-            ListTile(leading: Icon(Icons.inventory, color: Appcolor.iconFlow)),
-            ListTile(
-              leading: Icon(
-                Icons.add_circle_outline_outlined,
-                color: Appcolor.iconFlow,
-              ),
+              leading: CustomIcon(icon: Icons.add_circle_outline_outlined),
             ),
           ],
         ),
