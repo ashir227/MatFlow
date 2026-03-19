@@ -17,7 +17,7 @@ class DashBoard extends StatelessWidget {
               height: 200,
               child: DrawerHeader(
                 margin: EdgeInsets.all(0),
-                padding: EdgeInsets.all(0),
+                padding: EdgeInsets.only(left: 20, top: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   gradient: LinearGradient(
@@ -27,7 +27,7 @@ class DashBoard extends StatelessWidget {
                 ),
                 child: Text(
                   "MatFlow",
-                  style: TextStyle(color: Appcolor.background, fontSize: 50),
+                  style: TextStyle(color: Appcolor.background, fontSize: 40),
                 ),
               ),
             ),
