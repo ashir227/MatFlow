@@ -57,6 +57,7 @@ class AppDrawer extends StatelessWidget {
             title: Text("Add Material", style: TextStyle(fontSize: 18)),
             onTap: () {},
           ),
+          ListTile(leading: CustomIcon(icon: Icons.trending_up_outlined)),
         ],
       ),
       backgroundColor: Appcolor.background,
