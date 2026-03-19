@@ -30,3 +30,14 @@ class CustomButton {
     );
   }
 }
+
+class CustomIcon extends StatelessWidget {
+  final IconData icon;
+
+  const CustomIcon({required this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(height: 45, width: 45, child: Icon(icon));
+  }
+}
