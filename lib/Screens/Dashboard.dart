@@ -9,6 +9,7 @@ class DashBoard extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(backgroundColor: Appcolor.Mat),
       drawer: Drawer(
+        // ignore: sort_child_properties_last
         child: ListView(
           children: [
             DrawerHeader(
@@ -18,7 +19,21 @@ class DashBoard extends StatelessWidget {
                 ),
                 color: Appcolor.background,
               ),
-              child: Text("data"),
+              child: Text("data", style: TextStyle(color: Appcolor.background)),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.dashboard,
+                color: Appcolor.iconFlow,
+                size: 35,
+              ),
+            ),
+            ListTile(leading: Icon(Icons.inventory, color: Appcolor.iconFlow)),
+            ListTile(
+              leading: Icon(
+                Icons.add_circle_outline_outlined,
+                color: Appcolor.iconFlow,
+              ),
             ),
           ],
         ),

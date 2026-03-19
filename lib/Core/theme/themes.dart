@@ -10,6 +10,9 @@ class Appcolor {
   static const Color gradientStart = Color(0xFF2FA7A0);
   static const Color gradientEnd = Color(0xFF3FB3A9);
 
+  //icon color
+  static const Color iconFlow = Color.fromARGB(255, 40, 145, 140);
+
   // Background
   static const Color background = Color(0xFFFFFFFF);
 
