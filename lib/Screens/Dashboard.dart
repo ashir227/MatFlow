@@ -13,14 +13,23 @@ class DashBoard extends StatelessWidget {
         // ignore: sort_child_properties_last
         child: ListView(
           children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Appcolor.Mat, Appcolor.gradientEnd],
+            SizedBox(
+              height: 200,
+              child: DrawerHeader(
+                margin: EdgeInsets.all(0),
+                padding: EdgeInsets.all(0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  gradient: LinearGradient(
+                    colors: [Appcolor.Mat, Appcolor.gradientEnd],
+                  ),
+                  color: Appcolor.background,
                 ),
-                color: Appcolor.background,
+                child: Text(
+                  "MatFlow",
+                  style: TextStyle(color: Appcolor.background, fontSize: 50),
+                ),
               ),
-              child: Text("data", style: TextStyle(color: Appcolor.background)),
             ),
             ListTile(
               leading: CustomIcon(icon: Icons.dashboard_outlined),
