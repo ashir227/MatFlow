@@ -14,10 +14,10 @@ class DashBoard extends StatelessWidget {
         child: ListView(
           children: [
             SizedBox(
-              height: 200,
+              height: 230,
               child: DrawerHeader(
                 margin: EdgeInsets.all(0),
-                padding: EdgeInsets.only(left: 20, top: 20),
+                padding: EdgeInsets.only(left: 25, top: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   gradient: LinearGradient(
@@ -25,9 +25,25 @@ class DashBoard extends StatelessWidget {
                   ),
                   color: Appcolor.background,
                 ),
-                child: Text(
-                  "MatFlow",
-                  style: TextStyle(color: Appcolor.background, fontSize: 40),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "MatFlow",
+                      style: TextStyle(
+                        color: Appcolor.background,
+                        fontSize: 40,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "Material and Production Management",
+                      style: TextStyle(
+                        color: Appcolor.background,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
