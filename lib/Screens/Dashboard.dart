@@ -22,10 +22,20 @@ class DashBoard extends StatelessWidget {
               ),
               child: Text("data", style: TextStyle(color: Appcolor.background)),
             ),
-            ListTile(leading: CustomIcon(icon: Icons.dashboard_outlined)),
-            ListTile(leading: CustomIcon(icon: Icons.inventory_2_outlined)),
+            ListTile(
+              leading: CustomIcon(icon: Icons.dashboard_outlined),
+              title: Text("Dashboard", style: TextStyle(fontSize: 18)),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: CustomIcon(icon: Icons.inventory_2_outlined),
+              title: Text("Material List", style: TextStyle(fontSize: 18)),
+              onTap: () {},
+            ),
             ListTile(
               leading: CustomIcon(icon: Icons.add_circle_outline_outlined),
+              title: Text("Add Material", style: TextStyle(fontSize: 18)),
+              onTap: () {},
             ),
           ],
         ),

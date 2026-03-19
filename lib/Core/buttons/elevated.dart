@@ -38,6 +38,10 @@ class CustomIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(height: 35, width: 35, child: Icon(icon));
+    return Container(
+      height: 45,
+      width: 45,
+      child: Icon(icon, color: Appcolor.iconFlow, size: 32),
+    );
   }
 }
