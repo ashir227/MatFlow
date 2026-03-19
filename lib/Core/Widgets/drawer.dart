@@ -57,7 +57,21 @@ class AppDrawer extends StatelessWidget {
             title: Text("Add Material", style: TextStyle(fontSize: 18)),
             onTap: () {},
           ),
-          ListTile(leading: CustomIcon(icon: Icons.trending_up_outlined)),
+          ListTile(
+            leading: CustomIcon(icon: Icons.trending_up_outlined),
+            title: Text("Consumption", style: TextStyle(fontSize: 18)),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: CustomIcon(icon: Icons.calendar_month_rounded),
+            title: Text("Planning / Forecast", style: TextStyle(fontSize: 18)),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: CustomIcon(icon: Icons.receipt_long_rounded),
+            title: Text("Reports", style: TextStyle(fontSize: 18)),
+            onTap: () {},
+          ),
         ],
       ),
       backgroundColor: Appcolor.background,
