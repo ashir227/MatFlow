@@ -8,13 +8,24 @@ class ImageProviderClass extends ChangeNotifier {
   File? get image => _image;
 
   Future<void> pckfrmglry() async {
-    final XFile? Pickedimg = await picked.pickImage(
-      source: ImageSource.gallery,
-    );
+    final XFile? Picked = await picked.pickImage(source: ImageSource.gallery);
 
-    if (Pickedimg != null) {
-      _image = File(Pickedimg.path);
+    if (Picked != null) {
+      _image = File(Picked.path);
       notifyListeners();
     }
+  }
+
+  Future<void> pckfrmcam() async {
+    final XFile? Picked = await picked.pickImage(source: ImageSource.camera);
+    if (picked != null) {
+      _image = File(Picked!.path);
+      notifyListeners();
+    }
+  }
+
+  void ClearImage() {
+    _image = null;
+    notifyListeners();
   }
 }
