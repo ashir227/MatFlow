@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
-import 'package:matflow/Core/theme/themes.dart';
+import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/Screens/Dashboard.dart';
 import 'package:matflow/providers/loginProvider.dart';
 import 'package:provider/provider.dart';
