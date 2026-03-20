@@ -15,8 +15,8 @@ class AppDrawer extends StatelessWidget {
           SizedBox(
             height: 230,
             child: DrawerHeader(
-              margin: EdgeInsets.all(0),
-              padding: EdgeInsets.only(left: 25, top: 20),
+              margin: EdgeInsets.only(bottom: 0),
+              padding: EdgeInsets.only(left: 25, top: 20, bottom: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 gradient: LinearGradient(
@@ -24,6 +24,7 @@ class AppDrawer extends StatelessWidget {
                 ),
                 color: Appcolor.background,
               ),
+
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -43,6 +44,7 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(height: 25),
           ListTile(
             leading: CustomIcon(icon: Icons.dashboard_outlined),
             title: Text("Dashboard", style: TextStyle(fontSize: 18)),
