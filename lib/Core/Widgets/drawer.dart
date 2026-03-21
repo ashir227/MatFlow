@@ -97,6 +97,7 @@ class AppDrawer extends StatelessWidget {
         ],
       ),
       backgroundColor: Appcolor.background,
+      
     );
   }
 }
