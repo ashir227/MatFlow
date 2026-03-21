@@ -40,14 +40,24 @@ class AppDrawer extends StatelessWidget {
                     "Material and Production Management",
                     style: TextStyle(color: Appcolor.background, fontSize: 15),
                   ),
-
-
+                  SizedBox(height: 30),
+                  Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.image_outlined,
+                          size: 50,
+                          color: Appcolor.background,
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
-
           ),
-      
+
           SizedBox(height: 25),
           ListTile(
             leading: CustomIcon(icon: Icons.dashboard_outlined),
@@ -97,7 +107,6 @@ class AppDrawer extends StatelessWidget {
         ],
       ),
       backgroundColor: Appcolor.background,
-      
     );
   }
 }
