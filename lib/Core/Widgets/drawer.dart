@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/Widgets/icon.dart';
 // import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
+import 'package:matflow/providers/image_pick.dart';
+import 'package:provider/provider.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -28,14 +32,7 @@ class AppDrawer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "MatFlow",
-                    style: TextStyle(
-                      color: Appcolor.background,
-                      fontSize: 40,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
+                  CustmText(text: "MatFlow", size: 40, weight: FontWeight.w500),
                   Text(
                     "Material and Production Management",
                     style: TextStyle(color: Appcolor.background, fontSize: 15),
@@ -43,14 +40,21 @@ class AppDrawer extends StatelessWidget {
                   SizedBox(height: 30),
                   Row(
                     children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.image_outlined,
-                          size: 50,
-                          color: Appcolor.background,
-                        ),
+                      Consumer(
+                        builder: (ctx, _, __) {
+                          return IconButton(
+                            onPressed: () {
+                              ctx.read<ImagePckProvider>().image;
+                            },
+                            icon: Icon(
+                              Icons.image_outlined,
+                              size: 50,
+                              color: Appcolor.background,
+                            ),
+                          );
+                        },
                       ),
+                      Text(""),
                     ],
                   ),
                 ],

@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 
-class ImageProviderClass extends ChangeNotifier {
+class ImagePckProvider extends ChangeNotifier {
   final ImagePicker picked = ImagePicker();
   File? _image;
   File? get image => _image;
