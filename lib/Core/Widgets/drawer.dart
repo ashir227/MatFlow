@@ -50,7 +50,7 @@ class AppDrawer extends StatelessWidget {
                               showImagesource(context);
                             },
                             child: CircleAvatar(
-                              radius: 50,
+                              radius: 30,
                               backgroundColor: Colors.grey,
                               backgroundImage: pro.image != null
                                   ? FileImage(pro.image!)
@@ -58,7 +58,7 @@ class AppDrawer extends StatelessWidget {
                               child: pro.image == null
                                   ? Icon(
                                       Icons.person, // default profile icon
-                                      size: 50,
+                                      size: 35,
                                       color: Colors.white,
                                     )
                                   : null,
