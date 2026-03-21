@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
+import 'package:matflow/Core/Widgets/bottomSheet.dart';
 import 'package:matflow/Core/Widgets/icon.dart';
 // import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
@@ -40,24 +43,29 @@ class AppDrawer extends StatelessWidget {
                   SizedBox(height: 30),
                   Row(
                     children: [
-                      Consumer(
-                        builder: (ctx, _, __) {
-                          return IconButton(
-                            onPressed: () {
-                              Provider.of<ImagePckProvider>(
-                                ctx,
-                                listen: false,
-                              ).pckfrmglry();
+                      Consumer<ImagePckProvider>(
+                        builder: (ctx, pro, __) {
+                          return GestureDetector(
+                            onTap: () {
+                              showImagesource(context);
                             },
-                            icon: Icon(
-                              Icons.image_outlined,
-                              size: 50,
-                              color: Appcolor.background,
+                            child: CircleAvatar(
+                              radius: 50,
+                              backgroundColor: Colors.grey,
+                              backgroundImage: pro.image != null
+                                  ? FileImage(pro.image!)
+                                  : null,
+                              child: pro.image == null
+                                  ? Icon(
+                                      Icons.person, // default profile icon
+                                      size: 50,
+                                      color: Colors.white,
+                                    )
+                                  : null,
                             ),
                           );
                         },
                       ),
-                      Text(""),
                     ],
                   ),
                 ],
