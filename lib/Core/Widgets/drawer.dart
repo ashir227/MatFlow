@@ -44,7 +44,10 @@ class AppDrawer extends StatelessWidget {
                         builder: (ctx, _, __) {
                           return IconButton(
                             onPressed: () {
-                              ctx.read<ImagePckProvider>().image;
+                              Provider.of<ImagePckProvider>(
+                                ctx,
+                                listen: false,
+                              ).pckfrmglry();
                             },
                             icon: Icon(
                               Icons.image_outlined,
