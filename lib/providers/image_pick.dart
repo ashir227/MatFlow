@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:hive_flutter/adapters.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,11 @@ class ImagePckProvider extends ChangeNotifier {
     if (Picked != null) {
       _image = File(Picked.path);
       notifyListeners();
+    }
+    if (_image != null) {
+      var box = Hive.box("pckimg");
+      box.put(, true);
+
     }
   }
 
