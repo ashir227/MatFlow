@@ -7,16 +7,13 @@ class ImagePckProvider extends ChangeNotifier {
   final ImagePicker picked = ImagePicker();
   File? _image;
   File? get image => _image;
+  final box = Hive.box("loginbox");
   Future<void> pckfrmglry() async {
     final XFile? Picked = await picked.pickImage(source: ImageSource.gallery);
     if (Picked != null) {
       _image = File(Picked.path);
+      box.put("savedimg", Picked.path);
       notifyListeners();
-    }
-    if (_image != null) {
-      var box = Hive.box("pckimg");
-      box.put(, true);
-
     }
   }
 
@@ -24,6 +21,7 @@ class ImagePckProvider extends ChangeNotifier {
     final XFile? Picked = await picked.pickImage(source: ImageSource.camera);
     if (Picked != null) {
       _image = File(Picked.path);
+      box.put("savedimg", Picked.path);
       notifyListeners();
     }
     void Clearimage() {

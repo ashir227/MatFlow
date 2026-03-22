@@ -16,6 +16,7 @@ void main() async {
 
   // Open Hive box
   await Hive.openBox("loginBox");
+  await Hive.openBox("imgbox");
 
   // Run the app with providers
   runApp(
