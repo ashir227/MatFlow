@@ -5,14 +5,15 @@ import 'package:image_picker/image_picker.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/Widgets/bottomSheet.dart';
 import 'package:matflow/Core/Widgets/icon.dart';
+import 'package:matflow/Core/Widgets/AlertDialog.dart';
 // import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/providers/image_pick.dart';
-import 'package:matflow/providers/loginProvider.dart';
 import 'package:provider/provider.dart';
 
 class AppDrawer extends StatelessWidget {
-  const AppDrawer({super.key});
+  AppDrawer({super.key});
+  final namecontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +68,7 @@ class AppDrawer extends StatelessWidget {
                           );
                         },
                       ),
+                      Text("$namecontroller"),
                     ],
                   ),
                 ],
@@ -107,11 +109,12 @@ class AppDrawer extends StatelessWidget {
           ),
           SizedBox(height: 40),
           ListTile(
-            leading: IconButton(
-              onPressed: () {
-                Provider.of<Loginprovider>(context, listen: false).logout();
-              },
-              icon: Icon(Icons.logout),
+            onTap: () {
+              showAlert(context);
+            },
+            leading: CustomIcon(
+              icon: Icons.logout,
+              color: Appcolor.logoutColor,
             ),
             title: Text(
               "Logout",

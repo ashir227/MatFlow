@@ -29,6 +29,7 @@ class LoginScr extends StatelessWidget {
               TextField(
                 controller: namecontroller,
                 decoration: InputDecoration(
+                  hintText: "Username",
                   // enabledBorder: ,
                   border: OutlineInputBorder(
                     //
@@ -48,6 +49,7 @@ class LoginScr extends StatelessWidget {
               TextField(
                 controller: passwordcontroller,
                 decoration: InputDecoration(
+                  hintText: "Password",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
