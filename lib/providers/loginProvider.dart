@@ -22,7 +22,9 @@ class Loginprovider extends ChangeNotifier {
   }
 
   void username(String newname) {
-    name == newname;
+    name = newname;
+    var box = Hive.box("Username");
+    box.put("name", newname);
     notifyListeners();
   }
 }
