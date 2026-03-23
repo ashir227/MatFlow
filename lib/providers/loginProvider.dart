@@ -9,6 +9,7 @@ class Loginprovider extends ChangeNotifier {
     if (name == "admin" && password == "1234") {
       var box = Hive.box("loginbox");
       box.put("islogin", true);
+      username(name);
       notifyListeners();
       return true;
     }
