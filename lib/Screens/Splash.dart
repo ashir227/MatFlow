@@ -3,6 +3,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:matflow/Screens/Dashboard.dart';
 import 'package:matflow/Screens/login.dart';
 import 'package:matflow/providers/image_pick.dart';
+import 'package:matflow/providers/loginProvider.dart';
 import 'package:provider/provider.dart';
 
 class SplashScr extends StatefulWidget {
@@ -17,6 +18,9 @@ class _SplashScrState extends State<SplashScr> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    Future.microtask(() {
+      Provider.of<Loginprovider>(context, listen: false).loadusername();
+    });
     Future.microtask(() {
       Provider.of<ImagePckProvider>(context, listen: false).loadimage();
     });

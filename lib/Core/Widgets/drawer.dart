@@ -9,6 +9,7 @@ import 'package:matflow/Core/Widgets/AlertDialog.dart';
 // import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/providers/image_pick.dart';
+import 'package:matflow/providers/loginProvider.dart';
 import 'package:provider/provider.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -68,7 +69,14 @@ class AppDrawer extends StatelessWidget {
                           );
                         },
                       ),
-                      Text("$namecontroller"),
+                      Consumer<Loginprovider>(
+                        builder: (context, user, __) {
+                          return Text(
+                            user.name.isEmpty ? "Guest " : user.name,
+                            style: TextStyle(fontSize: 20),
+                          );
+                        },
+                      ),
                     ],
                   ),
                 ],

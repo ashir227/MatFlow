@@ -29,4 +29,10 @@ class Loginprovider extends ChangeNotifier {
     box.put("name", newname);
     notifyListeners();
   }
+
+  void loadusername() {
+    var box = Hive.box("Username");
+    box.get("name", defaultValue: "");
+    notifyListeners();
+  }
 }
