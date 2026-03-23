@@ -29,4 +29,12 @@ class ImagePckProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  void loadimage() {
+    final path = box.get("savedimg");
+    if (path != null) {
+      _image = File(path);
+      notifyListeners();
+    }
+  }
 }
