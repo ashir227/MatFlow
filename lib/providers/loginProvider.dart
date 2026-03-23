@@ -18,6 +18,8 @@ class Loginprovider extends ChangeNotifier {
   void logout() {
     var box = Hive.box("loginbox");
     box.delete("islogin");
+    box.delete("Username");
+    name = "";
     notifyListeners();
   }
 
