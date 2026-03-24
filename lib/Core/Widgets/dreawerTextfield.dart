@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/icon.dart';
 
 class DrawTextField extends StatelessWidget {
-  String text;
+  final String text;
   Icon? icon;
-  VoidCallbackAction? callback;
+  final VoidCallback? onTap;
   DrawTextField({
     super.key,
     required this.icon,
     required this.text,
-    this.callback,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: icon,
-      title: Text(text, style: TextStyle(fontSize: 18)),
-      onTap: () {
-        callback;
-      },
+    return GestureDetector(
+      child: ListTile(
+        leading: icon,
+        title: Text(text, style: TextStyle(fontSize: 18)),
+        onTap: onTap,
+      ),
     );
   }
 }

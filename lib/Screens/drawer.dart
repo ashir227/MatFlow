@@ -8,6 +8,7 @@ import 'package:matflow/Core/Widgets/icon.dart';
 import 'package:matflow/Core/Widgets/AlertDialog.dart';
 // import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
+import 'package:matflow/Screens/AddMaterial.dart';
 import 'package:matflow/providers/image_pick.dart';
 import 'package:matflow/providers/loginProvider.dart';
 import 'package:provider/provider.dart';
@@ -102,6 +103,12 @@ class AppDrawer extends StatelessWidget {
 
           SizedBox(height: 25),
           DrawTextField(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddMaterial()),
+              );
+            },
             text: "Dashboard",
             icon: Icon(Icons.dashboard_outlined, color: Appcolor.Flow),
           ),
