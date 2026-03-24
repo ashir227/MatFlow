@@ -18,8 +18,8 @@ class _SplashScrState extends State<SplashScr> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future(() {
-      Provider.of<Loginprovider>(context, listen: false).loadusername();
+    Future.microtask(() {
+      Provider.of<Loginprovider>(context, listen: false).loadUsername();
     });
     Future.microtask(() {
       Provider.of<ImagePckProvider>(context, listen: false).loadimage();
