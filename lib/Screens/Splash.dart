@@ -18,7 +18,7 @@ class _SplashScrState extends State<SplashScr> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.microtask(() {
+    Future(() {
       Provider.of<Loginprovider>(context, listen: false).loadusername();
     });
     Future.microtask(() {
@@ -42,7 +42,6 @@ class _SplashScrState extends State<SplashScr> {
     });
   }
 
-  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(

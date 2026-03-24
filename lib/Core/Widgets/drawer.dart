@@ -69,11 +69,15 @@ class AppDrawer extends StatelessWidget {
                           );
                         },
                       ),
+                      SizedBox(height: 40),
                       Consumer<Loginprovider>(
                         builder: (context, user, __) {
                           return Text(
                             user.name.isEmpty ? "Guest " : user.name,
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Appcolor.background,
+                            ),
                           );
                         },
                       ),
