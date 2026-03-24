@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
@@ -53,7 +52,7 @@ class AppDrawer extends StatelessWidget {
                               showImagesource(context);
                             },
                             child: CircleAvatar(
-                              radius: 30,
+                              radius: 35,
                               backgroundColor: Colors.grey,
                               backgroundImage: pro.image != null
                                   ? FileImage(pro.image!)
@@ -61,7 +60,7 @@ class AppDrawer extends StatelessWidget {
                               child: pro.image == null
                                   ? Icon(
                                       Icons.person, // default profile icon
-                                      size: 35,
+                                      size: 40,
                                       color: Colors.white,
                                     )
                                   : null,
@@ -69,17 +68,32 @@ class AppDrawer extends StatelessWidget {
                           );
                         },
                       ),
-                      SizedBox(height: 40),
-                      Consumer<Loginprovider>(
-                        builder: (context, user, __) {
-                          return Text(
-                            user.name.isEmpty ? "Guest " : user.name,
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Appcolor.background,
-                            ),
-                          );
-                        },
+                      SizedBox(width: 22),
+                      Column(
+                        children: [
+                          Consumer<Loginprovider>(
+                            builder: (context, user, __) {
+                              return Text(
+                                user.name.isEmpty ? "Guest " : user.name,
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Appcolor.background,
+                                ),
+                              );
+                            },
+                          ),
+                          SizedBox(height: 3),
+                          Consumer<Loginprovider>(
+                            builder: (context, desi, __) {
+                              return CustmText(
+                                text: desi.desig.isEmpty
+                                    ? "Guest "
+                                    : desi.desig,
+                              );
+                            },
+                          ),
+                        ],
                       ),
                     ],
                   ),

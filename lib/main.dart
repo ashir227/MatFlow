@@ -15,7 +15,7 @@ void main() async {
   await Hive.initFlutter(directory.path);
 
   // Open Hive box
-  await Hive.openBox("loginBox");
+  await Hive.openBox("loginbox");
   await Hive.openBox("imgbox");
   await Hive.openBox("Username");
 

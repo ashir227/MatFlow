@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 class LoginScr extends StatelessWidget {
   LoginScr({super.key});
   final namecontroller = TextEditingController();
+  final desigcontroller = TextEditingController();
   final passwordcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -41,6 +42,21 @@ class LoginScr extends StatelessWidget {
                       color: Appcolor.focusedBorder,
                       width: 1.5,
                     ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 27),
+              TextField(
+                controller: desigcontroller,
+
+                decoration: InputDecoration(
+                  hintText: "Designation",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Appcolor.Flow, width: 1.5),
                   ),
                 ),
               ),

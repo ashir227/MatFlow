@@ -4,12 +4,15 @@ import 'package:provider/provider.dart';
 
 class Loginprovider extends ChangeNotifier {
   String name = "";
+  String desig = "";
   // String? password;
   bool login(String name, String password) {
-    if (name == "admin" && password == "1234") {
+    if (password == "1234") {
       var box = Hive.box("loginbox");
       box.put("islogin", true);
+
       username(name);
+      designation(desig);
       notifyListeners();
       return true;
     }
@@ -35,6 +38,20 @@ class Loginprovider extends ChangeNotifier {
     var box = Hive.box("Username");
     name = box.get("name", defaultValue: ""); // ✅ assign value
     // print("Loaded name: $name"); // debug
+    notifyListeners();
+  }
+
+  void designation(String newdesig) {
+    desig = newdesig;
+    var box = Hive.box("Username");
+    box.put("desig", desig);
+    notifyListeners();
+  }
+
+  void loaddesig() {
+    var box = Hive.box("Username");
+    desig = box.get("desig", defaultValue: "");
+    print("Load desig : $desig");
     notifyListeners();
   }
 }
