@@ -6,7 +6,7 @@ class Loginprovider extends ChangeNotifier {
   String name = "";
   String desig = "";
   // String? password;
-  bool login(String name, String password) {
+  bool login(String name, String desig, String password) {
     if (password == "1234") {
       var box = Hive.box("loginbox");
       box.put("islogin", true);
@@ -29,13 +29,13 @@ class Loginprovider extends ChangeNotifier {
 
   void username(String newname) {
     name = newname;
-    var box = Hive.box("Username");
+    var box = Hive.box("loginbox");
     box.put("name", name);
     notifyListeners();
   }
 
   void loadUsername() {
-    var box = Hive.box("Username");
+    var box = Hive.box("loginbox");
     name = box.get("name", defaultValue: ""); // ✅ assign value
     // print("Loaded name: $name"); // debug
     notifyListeners();
@@ -43,13 +43,13 @@ class Loginprovider extends ChangeNotifier {
 
   void designation(String newdesig) {
     desig = newdesig;
-    var box = Hive.box("Username");
+    var box = Hive.box("loginbox");
     box.put("desig", desig);
     notifyListeners();
   }
 
   void loaddesig() {
-    var box = Hive.box("Username");
+    var box = Hive.box("loginbox");
     desig = box.get("desig", defaultValue: "");
     print("Load desig : $desig");
     notifyListeners();

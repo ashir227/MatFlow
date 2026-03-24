@@ -73,17 +73,14 @@ class AppDrawer extends StatelessWidget {
                         children: [
                           Consumer<Loginprovider>(
                             builder: (context, user, __) {
-                              return Text(
-                                user.name.isEmpty ? "Guest " : user.name,
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                  color: Appcolor.background,
-                                ),
+                              return CustmText(
+                                text: user.name.isEmpty ? "Guest " : user.name,
+                                size: 24,
+                                weight: FontWeight.bold,
                               );
                             },
                           ),
-                          SizedBox(height: 3),
+                          SizedBox(height: 1),
                           Consumer<Loginprovider>(
                             builder: (context, desi, __) {
                               return CustmText(
