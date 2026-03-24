@@ -34,7 +34,7 @@ class Loginprovider extends ChangeNotifier {
   void loadUsername() {
     var box = Hive.box("Username");
     name = box.get("name", defaultValue: ""); // ✅ assign value
-    print("Loaded name: $name"); // debug
+    // print("Loaded name: $name"); // debug
     notifyListeners();
   }
 }
