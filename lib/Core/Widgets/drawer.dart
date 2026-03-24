@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/Widgets/bottomSheet.dart';
+import 'package:matflow/Core/Widgets/dreawerTextfield.dart';
 import 'package:matflow/Core/Widgets/icon.dart';
 import 'package:matflow/Core/Widgets/AlertDialog.dart';
 // import 'package:matflow/Core/buttons/elevated.dart';
@@ -100,35 +101,29 @@ class AppDrawer extends StatelessWidget {
           ),
 
           SizedBox(height: 25),
-          ListTile(
-            leading: CustomIcon(icon: Icons.dashboard_outlined),
-            title: Text("Dashboard", style: TextStyle(fontSize: 18)),
-            onTap: () {},
+          DrawTextField(
+            text: "Dashboard",
+            icon: Icon(Icons.dashboard_outlined, color: Appcolor.Flow),
           ),
-          ListTile(
-            leading: CustomIcon(icon: Icons.inventory_2_outlined),
-            title: Text("Material List", style: TextStyle(fontSize: 18)),
-            onTap: () {},
+          DrawTextField(
+            text: "Material List",
+            icon: Icon(Icons.inventory_2_outlined, color: Appcolor.Flow),
           ),
-          ListTile(
-            leading: CustomIcon(icon: Icons.add_circle_outline_outlined),
-            title: Text("Add Material", style: TextStyle(fontSize: 18)),
-            onTap: () {},
+          DrawTextField(
+            text: "Add Material",
+            icon: Icon(Icons.add_circle_outline_outlined, color: Appcolor.Flow),
           ),
-          ListTile(
-            leading: CustomIcon(icon: Icons.trending_up_outlined),
-            title: Text("Consumption", style: TextStyle(fontSize: 18)),
-            onTap: () {},
+          DrawTextField(
+            text: "Consumption",
+            icon: Icon(Icons.trending_up_outlined, color: Appcolor.Flow),
           ),
-          ListTile(
-            leading: CustomIcon(icon: Icons.calendar_month_rounded),
-            title: Text("Planning / Forecast", style: TextStyle(fontSize: 18)),
-            onTap: () {},
+          DrawTextField(
+            text: "Planning / Forecast",
+            icon: Icon(Icons.calendar_month_rounded, color: Appcolor.Flow),
           ),
-          ListTile(
-            leading: CustomIcon(icon: Icons.receipt_long_rounded),
-            title: Text("Reports", style: TextStyle(fontSize: 18)),
-            onTap: () {},
+          DrawTextField(
+            text: "Reports",
+            icon: Icon(Icons.receipt_long_rounded, color: Appcolor.Flow),
           ),
           SizedBox(height: 40),
           ListTile(
