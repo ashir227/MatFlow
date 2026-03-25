@@ -7,54 +7,20 @@ class AddMaterial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Appcolor.Mat,
-      body: Stack(
-        children: [
-          SafeArea(
-            child: Container(
-              height: 100,
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(Icons.arrow_back, color: Appcolor.background),
-                  ),
-                  Expanded(
-                    child: Text(
-                      "Add Material",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Appcolor.background,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 48),
-                ],
-              ),
-            ),
+      appBar: AppBar(title: Text("Add Material")),
+      backgroundColor: Colors.grey[200],
+      body: Padding(
+        padding: EdgeInsetsGeometry.all(16),
+        child: Card(
+          elevation: 6,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusGeometry.circular(16),
           ),
-
-          Positioned(
-            top: 110,
-            right: 0,
-            left: 0,
-            bottom: 0,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Appcolor.background,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                  topRight: Radius.circular(50),
-                ),
-              ),
-            ),
+          child: Padding(
+            padding: EdgeInsetsGeometry.all(16),
+            child: SingleChildScrollView(child: Column(children: [])),
           ),
-        ],
+        ),
       ),
     );
   }
