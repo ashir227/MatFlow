@@ -9,32 +9,27 @@ class AddMaterial extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Add Material"),
-        elevation: 0, // important
+        backgroundColor: Appcolor.Mat,
       ),
-      body: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("Material Name"),
-              SizedBox(height: 10),
-              TextField(),
 
-              SizedBox(height: 16),
-
-              Text("Unit"),
-              SizedBox(height: 10),
-              TextField(),
-            ],
+      backgroundColor: Colors.grey[200],
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: SizedBox(
+          width: double.infinity,
+          child: Card(
+            elevation: 6,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Text("Test Form"), // 👈 ye add karo test ke liye
+                ],
+              ),
+            ),
           ),
         ),
       ),
