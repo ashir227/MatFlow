@@ -7,18 +7,34 @@ class AddMaterial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Add Material")),
-      backgroundColor: Colors.grey[200],
-      body: Padding(
-        padding: EdgeInsetsGeometry.all(16),
-        child: Card(
-          elevation: 6,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadiusGeometry.circular(16),
+      appBar: AppBar(
+        title: Text("Add Material"),
+        elevation: 0, // important
+      ),
+      body: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
           ),
-          child: Padding(
-            padding: EdgeInsetsGeometry.all(16),
-            child: SingleChildScrollView(child: Column(children: [])),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Material Name"),
+              SizedBox(height: 10),
+              TextField(),
+
+              SizedBox(height: 16),
+
+              Text("Unit"),
+              SizedBox(height: 10),
+              TextField(),
+            ],
           ),
         ),
       ),
