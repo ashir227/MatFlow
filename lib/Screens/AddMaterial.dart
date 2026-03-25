@@ -7,18 +7,16 @@ class AddMaterial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Appcolor.Mat,
       body: Stack(
         children: [
           SafeArea(
             child: Container(
               height: 100,
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
               child: Row(
                 children: [
-                  IconButton(
-                    icon: const Icon(Icons.arrow_back, color: Colors.white),
-                    onPressed: () => Navigator.pop(context),
-                  ),
+                  IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
                 ],
               ),
             ),
