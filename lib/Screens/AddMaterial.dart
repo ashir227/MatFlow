@@ -33,7 +33,24 @@ class AddMaterial extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(width: 48),
                 ],
+              ),
+            ),
+          ),
+
+          Positioned(
+            top: 110,
+            right: 0,
+            left: 0,
+            bottom: 0,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Appcolor.background,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(50),
+                  topRight: Radius.circular(50),
+                ),
               ),
             ),
           ),
