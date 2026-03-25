@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/theme/colors.dart';
@@ -17,13 +19,22 @@ class AddMaterial extends StatelessWidget {
         backgroundColor: Appcolor.Mat,
       ),
       body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           children: [
             Form(
               child: Column(
                 children: [
+                  SizedBox(height: 50),
                   TextFormField(
-                    decoration: InputDecoration(labelText: "Material Name"),
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(11),
+                        borderSide: BorderSide(),
+                      ),
+
+                      labelText: "Material Name",
+                    ),
                   ),
                 ],
               ),
