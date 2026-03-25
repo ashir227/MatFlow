@@ -6,6 +6,7 @@ class AddMaterial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Appcolor.allbckgrnd,
       appBar: AppBar(
         centerTitle: true,
         title: Titletext(),
@@ -15,7 +16,21 @@ class AddMaterial extends StatelessWidget {
         ),
         backgroundColor: Appcolor.Mat,
       ),
-      body: Container(),
+      body: Container(
+        child: Column(
+          children: [
+            Form(
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(labelText: "Material Name"),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

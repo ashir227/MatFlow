@@ -20,3 +20,20 @@ class CustmText extends StatelessWidget {
     );
   }
 }
+
+class Titletext extends StatelessWidget {
+  const Titletext({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "Add Material",
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        color: Appcolor.background,
+        fontSize: 26,
+        fontWeight: FontWeight.w500,
+      ),
+    );
+  }
+}

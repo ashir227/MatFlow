@@ -25,4 +25,6 @@ class Appcolor {
   static const Color text2 = Color(0xFF6B7280);
   //logout
   static const Color logoutColor = Color.fromARGB(255, 234, 57, 98);
+  //allbackground
+  static const Color allbckgrnd = Color(0xFFEEEEEE);
 }
