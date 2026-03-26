@@ -26,19 +26,21 @@ class DrawTextField extends StatelessWidget {
 }
 
 class AddMTextfield extends StatelessWidget {
-  final String label;
-  const AddMTextfield({super.key, required this.label});
+  // final String label;
+  const AddMTextfield({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(width: 22),
-        Text(
-          textAlign: TextAlign.left,
-          "Material Name",
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+        Padding(
+          padding: EdgeInsetsGeometry.only(left: 6, bottom: 4),
+          child: Text(
+            textAlign: TextAlign.left,
+            "Material Name",
+            style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+          ),
         ),
         TextFormField(
           decoration: InputDecoration(
@@ -50,8 +52,6 @@ class AddMTextfield extends StatelessWidget {
               borderRadius: BorderRadius.circular(11),
               borderSide: BorderSide(),
             ),
-
-            labelText: label,
           ),
         ),
       ],
