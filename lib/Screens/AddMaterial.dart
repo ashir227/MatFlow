@@ -27,7 +27,10 @@ class AddMaterial extends StatelessWidget {
             children: [
               Form(
                 child: Column(
-                  children: [SizedBox(height: 50), AddMTextfield()],
+                  children: [
+                    SizedBox(height: 50),
+                    AddMTextfield(txt: "Material Name"),
+                  ],
                 ),
               ),
             ],

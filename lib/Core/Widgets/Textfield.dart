@@ -26,8 +26,8 @@ class DrawTextField extends StatelessWidget {
 }
 
 class AddMTextfield extends StatelessWidget {
-  // final String label;
-  const AddMTextfield({super.key});
+  final String txt;
+  const AddMTextfield({super.key, required this.txt});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class AddMTextfield extends StatelessWidget {
           padding: EdgeInsetsGeometry.only(left: 6, bottom: 4),
           child: Text(
             textAlign: TextAlign.left,
-            "Material Name",
+            txt,
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
           ),
         ),
@@ -57,4 +57,6 @@ class AddMTextfield extends StatelessWidget {
       ],
     );
   }
+
+  void dropdownfield({required String text}) {}
 }
