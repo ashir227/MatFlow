@@ -31,19 +31,30 @@ class AddMTextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(11),
-          borderSide: BorderSide(color: Appcolor.focusedBorder, width: 1.5),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(width: 22),
+        Text(
+          textAlign: TextAlign.left,
+          "Material Name",
+          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
         ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(11),
-          borderSide: BorderSide(),
-        ),
+        TextFormField(
+          decoration: InputDecoration(
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(11),
+              borderSide: BorderSide(color: Appcolor.focusedBorder, width: 1.5),
+            ),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(11),
+              borderSide: BorderSide(),
+            ),
 
-        labelText: label,
-      ),
+            labelText: label,
+          ),
+        ),
+      ],
     );
   }
 }
