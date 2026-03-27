@@ -30,6 +30,8 @@ class AddMaterial extends StatelessWidget {
                   children: [
                     SizedBox(height: 50),
                     AddMTextfield(txt: "Material Name"),
+                    SizedBox(height: 10),
+                    DropDown(),
                   ],
                 ),
               ),
