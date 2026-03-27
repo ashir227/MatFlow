@@ -61,6 +61,7 @@ class AddMTextfield extends StatelessWidget {
 }
 
 class DropDown extends StatefulWidget {
+  // final String? textt;
   const DropDown({super.key});
 
   @override
@@ -70,18 +71,33 @@ class DropDown extends StatefulWidget {
 class _DropDownState extends State<DropDown> {
   List<String> caterories = ["KG", "Pcs"];
   String? selectedCategory;
+
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField(
-      decoration: InputDecoration(
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-      ),
-      items: caterories.map((item) {
-        return DropdownMenuItem<String>(child: Text(item), value: item);
-      }).toList(),
-      onChanged: (value) {
-        selectedCategory = value;
-      },
+    // String? textt;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsetsGeometry.only(left: 6, bottom: 4),
+          child: Text(
+            textAlign: TextAlign.left,
+            "Unit",
+            style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+          ),
+        ),
+        DropdownButtonFormField(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(11)),
+          ),
+          items: caterories.map((item) {
+            return DropdownMenuItem<String>(child: Text(item), value: item);
+          }).toList(),
+          onChanged: (value) {
+            selectedCategory = value;
+          },
+        ),
+      ],
     );
   }
 }
