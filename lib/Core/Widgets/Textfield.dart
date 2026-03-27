@@ -40,7 +40,7 @@ class AddMTextfield extends StatelessWidget {
           child: Text(
             textAlign: TextAlign.left,
             txt,
-            style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+            style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
           ),
         ),
         TextFormField(
@@ -82,12 +82,17 @@ class _DropDownState extends State<DropDown> {
           padding: EdgeInsetsGeometry.only(left: 6, bottom: 4),
           child: Text(
             textAlign: TextAlign.left,
+
             "Unit",
-            style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+            style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
           ),
         ),
         DropdownButtonFormField(
           decoration: InputDecoration(
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(11),
+              borderSide: BorderSide(color: Appcolor.focusedBorder),
+            ),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(11)),
           ),
           items: caterories.map((item) {
