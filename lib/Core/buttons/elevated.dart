@@ -4,14 +4,14 @@ import 'package:matflow/Core/theme/colors.dart';
 class CustomButton {
   static Widget elevatedB({
     required VoidCallback onPressed,
-
+    final Padding,
     required Color? Bcolor,
     required String text,
   }) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: 125, vertical: 11),
+        padding: Padding ?? EdgeInsets.symmetric(horizontal: 125, vertical: 11),
 
         backgroundColor: Bcolor,
         shape: RoundedRectangleBorder(

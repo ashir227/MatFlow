@@ -43,15 +43,21 @@ class AddMTextfield extends StatelessWidget {
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
           ),
         ),
-        TextFormField(
-          decoration: InputDecoration(
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(11),
-              borderSide: BorderSide(color: Appcolor.focusedBorder, width: 1.5),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(11),
-              borderSide: BorderSide(),
+        SizedBox(
+          height: 50,
+          child: TextFormField(
+            decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(11),
+                borderSide: BorderSide(
+                  color: Appcolor.focusedBorder,
+                  width: 1.5,
+                ),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(11),
+                borderSide: BorderSide(),
+              ),
             ),
           ),
         ),
@@ -87,20 +93,25 @@ class _DropDownState extends State<DropDown> {
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
           ),
         ),
-        DropdownButtonFormField(
-          decoration: InputDecoration(
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(11),
-              borderSide: BorderSide(color: Appcolor.focusedBorder),
+        SizedBox(
+          height: 50,
+          child: DropdownButtonFormField(
+            decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(11),
+                borderSide: BorderSide(color: Appcolor.focusedBorder),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(11),
+              ),
             ),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(11)),
+            items: caterories.map((item) {
+              return DropdownMenuItem<String>(child: Text(item), value: item);
+            }).toList(),
+            onChanged: (value) {
+              selectedCategory = value;
+            },
           ),
-          items: caterories.map((item) {
-            return DropdownMenuItem<String>(child: Text(item), value: item);
-          }).toList(),
-          onChanged: (value) {
-            selectedCategory = value;
-          },
         ),
       ],
     );

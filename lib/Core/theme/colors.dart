@@ -5,7 +5,8 @@ class Appcolor {
   //Primary brand color
   static const Color Mat = Color(0xFF233B6E); // Mat color
   static const Color Flow = Color(0xFF2FA7A0); // Flow color
-
+  // elevated Button color
+  static const Color Elevbtnclr = Color.fromARGB(217, 47, 167, 161);
   // Gradient Colors
   static const Color gradientStart = Color(0xFF2FA7A0);
   static const Color gradientEnd = Color(0xFF3FB3A9);
