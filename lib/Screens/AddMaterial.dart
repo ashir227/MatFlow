@@ -40,7 +40,7 @@ class AddMaterial extends StatelessWidget {
                       AddMTextfield(txt: "Initial Stock"),
                       SizedBox(height: 25),
                       AddMTextfield(txt: "Minimum Thresold"),
-                      SizedBox(height: 30),
+                      SizedBox(height: 37),
                       CustomButton.elevatedB(
                         onPressed: () {},
                         Bcolor: Appcolor.Elevbtnclr,

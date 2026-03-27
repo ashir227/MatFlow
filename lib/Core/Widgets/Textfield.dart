@@ -5,9 +5,10 @@ import 'package:matflow/Core/theme/colors.dart';
 
 class DrawTextField extends StatelessWidget {
   final String text;
-  Icon? icon;
+  final Icon? icon;
   final VoidCallback? onTap;
-  DrawTextField({
+
+  const DrawTextField({
     super.key,
     required this.icon,
     required this.text,
@@ -16,12 +17,11 @@ class DrawTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: ListTile(
-        leading: icon,
-        title: Text(text, style: TextStyle(fontSize: 18)),
-        onTap: onTap,
-      ),
+    return ListTile(
+      selectedTileColor: Appcolor.text2,
+      leading: icon,
+      title: Text(text, style: const TextStyle(fontSize: 18)),
+      onTap: onTap, // abhi bhi jo bhi function pass hua tha wo call hoga
     );
   }
 }

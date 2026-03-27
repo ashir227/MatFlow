@@ -9,6 +9,7 @@ import 'package:matflow/Core/Widgets/AlertDialog.dart';
 // import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/Screens/AddMaterial.dart';
+import 'package:matflow/Screens/Dashboard.dart';
 import 'package:matflow/providers/image_pick.dart';
 import 'package:matflow/providers/loginProvider.dart';
 import 'package:provider/provider.dart';
@@ -106,7 +107,7 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AddMaterial()),
+                MaterialPageRoute(builder: (context) => DashBoard()),
               );
             },
             text: "Dashboard",
@@ -117,6 +118,12 @@ class AppDrawer extends StatelessWidget {
             icon: Icon(Icons.inventory_2_outlined, color: Appcolor.Flow),
           ),
           DrawTextField(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddMaterial()),
+              );
+            },
             text: "Add Material",
             icon: Icon(Icons.add_circle_outline_outlined, color: Appcolor.Flow),
           ),
