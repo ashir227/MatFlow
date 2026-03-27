@@ -18,7 +18,10 @@ class DrawTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      selectedTileColor: Appcolor.text2,
+      selectedTileColor: Colors.grey[200],
+      tileColor: Colors.white, // normal background
+
+      hoverColor: const Color.fromARGB(233, 238, 238, 238),
       leading: icon,
       title: Text(text, style: const TextStyle(fontSize: 18)),
       onTap: onTap, // abhi bhi jo bhi function pass hua tha wo call hoga
