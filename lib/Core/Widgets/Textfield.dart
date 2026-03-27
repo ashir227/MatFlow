@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/icon.dart';
 import 'package:matflow/Core/theme/colors.dart';
@@ -57,6 +58,30 @@ class AddMTextfield extends StatelessWidget {
       ],
     );
   }
+}
 
-  void dropdownfield({required String text}) {}
+class DropDown extends StatefulWidget {
+  const DropDown({super.key});
+
+  @override
+  State<DropDown> createState() => _DropDownState();
+}
+
+class _DropDownState extends State<DropDown> {
+  List<String> caterories = ["KG", "Pcs"];
+  String? selectedCategory;
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButtonFormField(
+      decoration: InputDecoration(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+      ),
+      items: caterories.map((item) {
+        return DropdownMenuItem<String>(child: Text(item), value: item);
+      }).toList(),
+      onChanged: (value) {
+        selectedCategory = value;
+      },
+    );
+  }
 }
