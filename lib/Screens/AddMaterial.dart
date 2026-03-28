@@ -7,6 +7,13 @@ import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
 
 class AddMaterial extends StatelessWidget {
+  AddMaterial({super.key});
+  final matnamecontroller = TextEditingController();
+  final unitcontroller = TextEditingController();
+  final consumpcontroller = TextEditingController();
+  final initstkcontroller = TextEditingController();
+  final minstkcontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -31,15 +38,27 @@ class AddMaterial extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(height: 40),
-                      AddMTextfield(txt: "Material Name"),
+                      AddMTextfield(
+                        txt: "Material Name",
+                        controller: matnamecontroller,
+                      ),
                       SizedBox(height: 25),
                       DropDown(),
                       SizedBox(height: 25),
-                      AddMTextfield(txt: "Per Piece Consumption"),
+                      AddMTextfield(
+                        txt: "Per Piece Consumption",
+                        controller: consumpcontroller,
+                      ),
                       SizedBox(height: 25),
-                      AddMTextfield(txt: "Initial Stock"),
+                      AddMTextfield(
+                        txt: "Initial Stock",
+                        controller: initstkcontroller,
+                      ),
                       SizedBox(height: 25),
-                      AddMTextfield(txt: "Minimum Thresold"),
+                      AddMTextfield(
+                        txt: "Minimum Thresold",
+                        controller: minstkcontroller,
+                      ),
                       SizedBox(height: 37),
                       CustomButton.elevatedB(
                         onPressed: () {},

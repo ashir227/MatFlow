@@ -10,6 +10,7 @@ class DrawTextField extends StatelessWidget {
 
   const DrawTextField({
     super.key,
+
     required this.icon,
     required this.text,
     this.onTap,
@@ -31,7 +32,8 @@ class DrawTextField extends StatelessWidget {
 
 class AddMTextfield extends StatelessWidget {
   final String txt;
-  const AddMTextfield({super.key, required this.txt});
+  final TextEditingController controller;
+  const AddMTextfield({super.key, required this.controller, required this.txt});
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +51,7 @@ class AddMTextfield extends StatelessWidget {
         SizedBox(
           height: 50,
           child: TextFormField(
+            controller: controller,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(11),
@@ -70,7 +73,7 @@ class AddMTextfield extends StatelessWidget {
 }
 
 class DropDown extends StatefulWidget {
-  // final String? textt;
+  // final TextEditingController controller;
   const DropDown({super.key});
 
   @override
@@ -99,6 +102,7 @@ class _DropDownState extends State<DropDown> {
         SizedBox(
           height: 50,
           child: DropdownButtonFormField(
+            initialValue: caterories[0],
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(11),
