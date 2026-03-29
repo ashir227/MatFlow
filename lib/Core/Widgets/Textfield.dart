@@ -51,6 +51,11 @@ class AddMTextfield extends StatelessWidget {
         SizedBox(
           height: 50,
           child: TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return "name required";
+              }
+            },
             controller: controller,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
