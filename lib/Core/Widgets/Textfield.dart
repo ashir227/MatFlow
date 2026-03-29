@@ -33,7 +33,13 @@ class DrawTextField extends StatelessWidget {
 class AddMTextfield extends StatelessWidget {
   final String txt;
   final TextEditingController controller;
-  const AddMTextfield({super.key, required this.controller, required this.txt});
+  final validator;
+  const AddMTextfield({
+    super.key,
+    required this.validator,
+    required this.controller,
+    required this.txt,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,11 +57,7 @@ class AddMTextfield extends StatelessWidget {
         SizedBox(
           height: 50,
           child: TextFormField(
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "name required";
-              }
-            },
+            validator: validator,
             controller: controller,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(

@@ -13,7 +13,7 @@ class AddMaterial extends StatelessWidget {
   final consumpcontroller = TextEditingController();
   final initstkcontroller = TextEditingController();
   final minstkcontroller = TextEditingController();
-
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -35,10 +35,16 @@ class AddMaterial extends StatelessWidget {
             child: Column(
               children: [
                 Form(
+                  key: _formKey,
                   child: Column(
                     children: [
                       SizedBox(height: 40),
                       AddMTextfield(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Name Required";
+                          }
+                        },
                         txt: "Material Name",
                         controller: matnamecontroller,
                       ),
@@ -46,16 +52,31 @@ class AddMaterial extends StatelessWidget {
                       DropDown(),
                       SizedBox(height: 25),
                       AddMTextfield(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Consumption QTY Required";
+                          }
+                        },
                         txt: "Per Piece Consumption",
                         controller: consumpcontroller,
                       ),
                       SizedBox(height: 25),
                       AddMTextfield(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Stock Required";
+                          }
+                        },
                         txt: "Initial Stock",
                         controller: initstkcontroller,
                       ),
                       SizedBox(height: 25),
                       AddMTextfield(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Name Minimum Stock Required";
+                          }
+                        },
                         txt: "Minimum Thresold",
                         controller: minstkcontroller,
                       ),
