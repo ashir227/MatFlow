@@ -1,5 +1,4 @@
 import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/Widgets/Textfield.dart';
@@ -55,6 +54,14 @@ class AddMaterial extends StatelessWidget {
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return "Consumption QTY Required";
+                          }
+                          int? numb = int.tryParse(value);
+                          if (numb == null) {
+                            return "Enter valid number";
+                          }
+
+                          if (numb < 0) {
+                            return "Enter Prositive QTY";
                           }
                         },
                         txt: "Per Piece Consumption",
