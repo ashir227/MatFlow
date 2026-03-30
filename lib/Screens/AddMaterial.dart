@@ -23,7 +23,7 @@ class AddMaterial extends StatelessWidget {
   final unitcontroller = TextEditingController();
   final consumpcontroller = TextEditingController();
   final initstkcontroller = TextEditingController();
-  // final minstkcontroller = TextEditingController();
+  final minstkcontroller = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
