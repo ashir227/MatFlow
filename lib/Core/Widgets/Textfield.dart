@@ -34,11 +34,13 @@ class AddMTextfield extends StatelessWidget {
   final String txt;
   final TextEditingController controller;
   final validator;
+  final String? errorText;
   const AddMTextfield({
     super.key,
     required this.validator,
     required this.controller,
     required this.txt,
+    required this.errorText,
   });
 
   @override
@@ -60,7 +62,6 @@ class AddMTextfield extends StatelessWidget {
             validator: validator,
             controller: controller,
             decoration: InputDecoration(
-              hintText: "",
               errorStyle: TextStyle(height: 0),
               helperStyle: TextStyle(fontSize: 10),
               focusedBorder: OutlineInputBorder(
