@@ -60,6 +60,7 @@ class AddMTextfield extends StatelessWidget {
             validator: validator,
             controller: controller,
             decoration: InputDecoration(
+              hintText: "",
               errorStyle: TextStyle(height: 0),
               helperStyle: TextStyle(fontSize: 10),
               focusedBorder: OutlineInputBorder(

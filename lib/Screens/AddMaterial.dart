@@ -6,7 +6,19 @@ import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
 
 class AddMaterial extends StatelessWidget {
-  AddMaterial({super.key});
+  String? nameError;
+  String? consmpError;
+  String? intstkError;
+
+  String? minstkError;
+
+  AddMaterial({
+    super.key,
+    this.minstkError,
+    this.consmpError,
+    this.intstkError,
+    this.nameError,
+  });
   final matnamecontroller = TextEditingController();
   final unitcontroller = TextEditingController();
   final consumpcontroller = TextEditingController();
