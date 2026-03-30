@@ -89,7 +89,9 @@ class AddMaterial extends StatelessWidget {
                       ),
                       SizedBox(height: 37),
                       CustomButton.elevatedB(
-                        onPressed: () {},
+                        onPressed: () {
+                          _formKey.currentState!.validate();
+                        },
                         Bcolor: Appcolor.Elevbtnclr,
                         Padding: EdgeInsets.symmetric(
                           horizontal: 135,
