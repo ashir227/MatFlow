@@ -98,7 +98,7 @@ class LoginScr extends StatelessWidget {
                     } else {
                       ScaffoldMessenger.of(
                         context,
-                      ).showSnackBar(SnackBar(content: Text("data")));
+                      ).showSnackBar(SnackBar(content: Text("Wrong Password")));
                     }
                   },
 
