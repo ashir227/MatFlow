@@ -81,14 +81,6 @@ class AddMTextfield extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 8),
-            SizedBox(
-              width: 90,
-              child: Text(
-                errorText ?? "",
-                style: TextStyle(color: Colors.red, fontSize: 10),
-              ),
-            ),
           ],
         ),
       ],
