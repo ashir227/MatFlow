@@ -56,27 +56,40 @@ class AddMTextfield extends StatelessWidget {
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
           ),
         ),
-        SizedBox(
-          height: 50,
-          child: TextFormField(
-            validator: validator,
-            controller: controller,
-            decoration: InputDecoration(
-              errorStyle: TextStyle(height: 0),
-              helperStyle: TextStyle(fontSize: 10),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(11),
-                borderSide: BorderSide(
-                  color: Appcolor.focusedBorder,
-                  width: 1.5,
+        Row(
+          children: [
+            Expanded(
+              child: SizedBox(
+                height: 50,
+                child: TextFormField(
+                  validator: validator,
+                  controller: controller,
+                  decoration: InputDecoration(
+                    errorStyle: TextStyle(height: 0),
+                    helperStyle: TextStyle(fontSize: 10),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: BorderSide(
+                        color: Appcolor.focusedBorder,
+                        width: 1.5,
+                      ),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                    ),
+                  ),
                 ),
               ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(11),
-                borderSide: BorderSide(),
+            ),
+            SizedBox(width: 8),
+            SizedBox(
+              width: 90,
+              child: Text(
+                errorText ?? "",
+                style: TextStyle(color: Colors.red, fontSize: 10),
               ),
             ),
-          ),
+          ],
         ),
       ],
     );
