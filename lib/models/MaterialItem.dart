@@ -1,8 +1,8 @@
 class Materialitem {
   String name;
-  int matinitstk;
-  int thresold;
-  int consumption;
+  int? matinitstk;
+  int? thresold;
+  int? consumption;
   Materialitem({
     required this.name,
     required this.matinitstk,
