@@ -5,6 +5,8 @@ import 'package:matflow/Core/Widgets/Textfield.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/models/MaterialItem.dart';
+import 'package:matflow/providers/addmat.dart';
+import 'package:provider/provider.dart';
 
 class AddMaterial extends StatelessWidget {
   AddMaterial({super.key});
@@ -95,14 +97,20 @@ class AddMaterial extends StatelessWidget {
                       SizedBox(height: 37),
                       CustomButton.elevatedB(
                         onPressed: () {
-                          Materialitem(
-                            name: matnamecontroller.text,
-                            matinitstk: int.parse(initstkcontroller.text),
-                            thresold: int.parse(minstkcontroller.text),
-                            consumption: int.parse(consumpcontroller.text),
-                          );
-                          _formKey.currentState!.validate();
+                          if (_formKey.currentState!.validate()) {
+                            Materialitem newmatitem = Materialitem(
+                              name: matnamecontroller.text,
+                              matinitstk: int.parse(initstkcontroller.text),
+                              thresold: int.parse(minstkcontroller.text),
+                              consumption: int.parse(consumpcontroller.text),
+                            );
+                            print("ddddddddd");
+                            context.read<AddmatProvider>().addmaterial(
+                              newmatitem,
+                            );
+                          }
                         },
+
                         Bcolor: Appcolor.Elevbtnclr,
                         Padding: EdgeInsets.symmetric(
                           horizontal: 135,

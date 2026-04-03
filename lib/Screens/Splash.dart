@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:matflow/Screens/Dashboard.dart';
 import 'package:matflow/Screens/login.dart';
+import 'package:matflow/providers/addmat.dart';
 import 'package:matflow/providers/image_pick.dart';
 import 'package:matflow/providers/loginProvider.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +28,9 @@ class _SplashScrState extends State<SplashScr> {
     Future.microtask(() {
       Provider.of<ImagePckProvider>(context, listen: false).loadimage();
     });
-
+    Future.microtask(() {
+      Provider.of<AddmatProvider>(context, listen: false).loadmaterial();
+    });
     Future.delayed(Duration(seconds: 3), () {
       var box = Hive.box("loginbox");
       bool isLogin = box.get("islogin", defaultValue: false);
