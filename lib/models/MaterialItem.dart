@@ -1,12 +1,19 @@
-import 'package:hive_flutter/adapters.dart';
+import 'package:hive/hive.dart';
 
 @HiveType(typeId: 0)
-class Materialitem {
+class Materialitem extends HiveObject {
   @HiveField(0)
   String name;
-  int? matinitstk;
-  int? thresold;
-  int? consumption;
+
+  @HiveField(1)
+  int matinitstk;
+
+  @HiveField(2)
+  int thresold;
+
+  @HiveField(3)
+  int consumption;
+
   Materialitem({
     required this.name,
     required this.matinitstk,
