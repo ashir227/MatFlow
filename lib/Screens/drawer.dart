@@ -10,6 +10,7 @@ import 'package:matflow/Core/Widgets/AlertDialog.dart';
 import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/Screens/AddMaterial.dart';
 import 'package:matflow/Screens/Dashboard.dart';
+import 'package:matflow/Screens/Materiallist.dart';
 import 'package:matflow/providers/image_pick.dart';
 import 'package:matflow/providers/loginProvider.dart';
 import 'package:provider/provider.dart';
@@ -114,6 +115,12 @@ class AppDrawer extends StatelessWidget {
             icon: Icon(Icons.dashboard_outlined, color: Appcolor.Flow),
           ),
           DrawTextField(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MatlistScr()),
+              );
+            },
             text: "Material List",
             icon: Icon(Icons.inventory_2_outlined, color: Appcolor.Flow),
           ),

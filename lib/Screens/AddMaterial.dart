@@ -104,7 +104,6 @@ class AddMaterial extends StatelessWidget {
                               thresold: int.parse(minstkcontroller.text),
                               consumption: int.parse(consumpcontroller.text),
                             );
-                            print("ddddddddd");
                             context.read<AddmatProvider>().addmaterial(
                               newmatitem,
                             );
