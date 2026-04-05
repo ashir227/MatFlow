@@ -18,9 +18,9 @@ class MaterialitemAdapter extends TypeAdapter<Materialitem> {
     };
     return Materialitem(
       name: fields[0] as String,
-      matinitstk: fields[1] as int,
-      thresold: fields[2] as int,
-      consumption: fields[3] as int,
+      consumption: fields[1] as int,
+      matinitstk: fields[2] as int,
+      thresold: fields[3] as int,
     );
   }
 
@@ -31,11 +31,11 @@ class MaterialitemAdapter extends TypeAdapter<Materialitem> {
       ..writeByte(0)
       ..write(obj.name)
       ..writeByte(1)
-      ..write(obj.matinitstk)
+      ..write(obj.consumption)
       ..writeByte(2)
-      ..write(obj.thresold)
+      ..write(obj.matinitstk)
       ..writeByte(3)
-      ..write(obj.consumption);
+      ..write(obj.thresold);
   }
 
   @override
