@@ -4,7 +4,7 @@ import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/Widgets/Textfield.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
-import 'package:matflow/models/MaterialItem.dart';
+import 'package:matflow/models/material_item.dart';
 import 'package:matflow/providers/addmat.dart';
 import 'package:provider/provider.dart';
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:matflow/Screens/Splash.dart';
+import 'package:matflow/models/material_item.dart';
 import 'package:matflow/providers/addmat.dart';
 import 'package:matflow/providers/image_pick.dart';
 import 'package:matflow/providers/loginProvider.dart';
@@ -14,7 +15,7 @@ void main() async {
   // Initialize Hive with app documents directory
   final directory = await getApplicationDocumentsDirectory();
   await Hive.initFlutter(directory.path);
-
+  Hive.registerAdapter(MaterialitemAdapter());
   // Open Hive box
   await Hive.openBox("loginbox");
   await Hive.openBox("imgbox");

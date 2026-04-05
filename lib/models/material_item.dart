@@ -8,18 +8,18 @@ class Materialitem extends HiveObject {
   String name;
 
   @HiveField(1)
-  int matinitstk;
+  int consumption;
 
   @HiveField(2)
-  int thresold;
+  int matinitstk;
 
   @HiveField(3)
-  int consumption;
+  int thresold;
 
   Materialitem({
     required this.name,
+    required this.consumption,
     required this.matinitstk,
     required this.thresold,
-    required this.consumption,
   });
 }

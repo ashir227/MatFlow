@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:matflow/models/MaterialItem.dart';
+import 'package:matflow/models/material_item.dart';
 
 class AddmatProvider extends ChangeNotifier {
   List<Materialitem> material = [];
