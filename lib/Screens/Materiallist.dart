@@ -10,7 +10,7 @@ class MatlistScr extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Titletext(),
+        title: Titletext(txt: "Material Item"),
         toolbarHeight: 100,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(6),

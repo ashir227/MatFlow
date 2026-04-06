@@ -24,7 +24,7 @@ class AddMaterial extends StatelessWidget {
         backgroundColor: Appcolor.allbckgrnd,
         appBar: AppBar(
           centerTitle: true,
-          title: Titletext(),
+          title: Titletext(txt: "Add Material"),
           toolbarHeight: 100,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(6),

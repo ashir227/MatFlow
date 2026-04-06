@@ -22,12 +22,13 @@ class CustmText extends StatelessWidget {
 }
 
 class Titletext extends StatelessWidget {
-  const Titletext({super.key});
+  String txt;
+  Titletext({required this.txt});
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      "Add Material",
+      txt,
       textAlign: TextAlign.center,
       style: TextStyle(
         color: Appcolor.background,
