@@ -2,6 +2,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/Widgets/Textfield.dart';
+import 'package:matflow/Core/Widgets/iconButton.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/models/material_item.dart';
@@ -49,7 +50,7 @@ class AddMaterial extends StatelessWidget {
                         },
 
                         txt:
-                            "Material Name             ${IconButton(onPressed: () {}, icon: Icon(Icons.add))}",
+                            "Material Name             ${IconBut(icon: Icon(Icons.add))}",
                         controller: matnamecontroller,
                         errorText: '',
                       ),

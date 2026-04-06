@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/theme/colors.dart';
+import 'package:matflow/Screens/MatDetail.dart';
 import 'package:matflow/providers/addmatlist.dart';
 import 'package:provider/provider.dart';
 
@@ -26,8 +27,21 @@ class MatlistScr extends StatelessWidget {
               itemCount: pro.material.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text(pro.material[index].name),
-                  subtitle: Text(pro.material[index].consumption.toString()),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Matdetails()),
+                    );
+                  },
+                  // leading: ,
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(pro.material[index].name),
+                      Text(pro.material[index].consumption.toString()),
+                      Text("Status"),
+                    ],
+                  ),
                 );
               },
             );
