@@ -25,7 +25,10 @@ class MatlistScr extends StatelessWidget {
             return ListView.builder(
               itemCount: pro.material.length,
               itemBuilder: (context, index) {
-                return ListTile(title: Text(pro.material[index].name));
+                return ListTile(
+                  title: Text(pro.material[index].name),
+                  subtitle: Text(pro.material[index].consumption.toString()),
+                );
               },
             );
           },

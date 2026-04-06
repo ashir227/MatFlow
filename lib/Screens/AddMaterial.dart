@@ -47,7 +47,9 @@ class AddMaterial extends StatelessWidget {
                             return "Name Required";
                           }
                         },
-                        txt: "Material Name",
+
+                        txt:
+                            "Material Name             ${IconButton(onPressed: () {}, icon: Icon(Icons.add))}",
                         controller: matnamecontroller,
                         errorText: '',
                       ),
