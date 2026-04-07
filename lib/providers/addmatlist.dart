@@ -10,9 +10,7 @@ class AddmatProvider extends ChangeNotifier {
     box.add(matitems);
 
     material = box.values.cast<Materialitem>().toList();
-    if (material != null) {
-      print("Data Saved");
-    }
+
     notifyListeners();
   }
 
