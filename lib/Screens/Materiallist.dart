@@ -26,22 +26,25 @@ class MatlistScr extends StatelessWidget {
             return ListView.builder(
               itemCount: pro.material.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Matdetails()),
-                    );
-                  },
-                  // leading: ,
-                  title: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(pro.material[index].name),
-                      Text(pro.material[index].consumption.toString()),
-                      Text("Status"),
-                    ],
-                  ),
+                return Column(
+                  children: [
+                    ListTile(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Matdetails()),
+                        );
+                      },
+                      // leading: ,
+                      title: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(pro.material[index].name),
+                          Text("Status"),
+                        ],
+                      ),
+                    ),
+                  ],
                 );
               },
             );

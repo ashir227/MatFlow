@@ -8,13 +8,18 @@ class AddmatProvider extends ChangeNotifier {
   void addmaterial(Materialitem matitems) {
     var box = Hive.box("materials");
     box.add(matitems);
+
     material = box.values.cast<Materialitem>().toList();
+    if (material != null) {
+      print("Data Saved");
+    }
     notifyListeners();
   }
 
   void loadmaterial() {
     var box = Hive.box("materials");
     material = box.values.cast<Materialitem>().toList();
+
     notifyListeners();
   }
 }
