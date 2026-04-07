@@ -84,6 +84,7 @@ class AddMaterial extends StatelessWidget {
                         },
                         txt: "Initial Stock",
                         controller: initstkcontroller,
+
                         errorText: '',
                       ),
                       SizedBox(height: 25),
@@ -110,6 +111,10 @@ class AddMaterial extends StatelessWidget {
                             context.read<AddmatProvider>().addmaterial(
                               newmatitem,
                             );
+                            matnamecontroller.clear();
+                            consumpcontroller.clear();
+                            initstkcontroller.clear();
+                            minstkcontroller.clear();
                           }
                         },
 
