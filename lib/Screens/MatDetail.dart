@@ -18,7 +18,9 @@ class Matdetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Card(
-                  margin: EdgeInsetsDirectional.all(30),
+                  margin: EdgeInsets.symmetric(
+                    vertical: MediaQuery.of(context).size.height * 0.1,
+                  ),
                   child: Column(
                     children: [
                       Text(materialItem.name),
