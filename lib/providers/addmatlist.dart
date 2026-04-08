@@ -21,12 +21,14 @@ class AddmatProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void deletematerial(Material newmatitems) {
-    List<Materialitem> material = [];
+  void deletematerial(Materialitem item) {
+    //Is me Itemident is liye banaya ha ke ye material model me se batay ga kon sa index wali key delete karni ha
+    // List<Materialitem> material = [];
 
-    var box = Hive.box("material");
+    var box = Hive.box("materials");
 
-    box.delete(newmatitems);
+    item.delete();
+    material = box.values.cast<Materialitem>().toList();
 
     notifyListeners();
   }

@@ -32,10 +32,14 @@ class Matdetails extends StatelessWidget {
                 ),
 
                 Consumer<AddmatProvider>(
-                  builder: (context, pro, _) {
+                  builder: (context, pro, index) {
+                    //  final  item = pro.material[index];
                     return ElevatedButton(
                       onPressed: () {
-                        pro.deletematerial();
+                        context.read<AddmatProvider>().deletematerial(
+                          materialItem,
+                        );
+                        Navigator.pop(context);
                       },
                       child: Text("Delete"),
                     );
