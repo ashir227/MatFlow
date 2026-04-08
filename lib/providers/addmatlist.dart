@@ -5,9 +5,9 @@ import 'package:matflow/models/material_item.dart';
 class AddmatProvider extends ChangeNotifier {
   List<Materialitem> material = [];
   // AddmatProvider();
-  void addmaterial(Materialitem matitems) {
+  void addmaterial(Materialitem newmatitems) {
     var box = Hive.box("materials");
-    box.add(matitems);
+    box.add(newmatitems);
 
     material = box.values.cast<Materialitem>().toList();
 
@@ -16,6 +16,15 @@ class AddmatProvider extends ChangeNotifier {
 
   void loadmaterial() {
     var box = Hive.box("materials");
+    material = box.values.cast<Materialitem>().toList();
+
+    notifyListeners();
+  }
+
+  void deletematerial() {
+    var box = Hive.box("material");
+
+    box.delete(material);
     material = box.values.cast<Materialitem>().toList();
 
     notifyListeners();
