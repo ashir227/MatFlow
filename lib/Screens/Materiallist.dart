@@ -26,7 +26,7 @@ class MatlistScr extends StatelessWidget {
             return ListView.builder(
               itemCount: pro.material.length,
               itemBuilder: (context, index) {
-                pro.material[index];
+                final item = pro.material[index];
                 return Column(
                   children: [
                     ListTile(
@@ -35,7 +35,7 @@ class MatlistScr extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                Matdetails(materialItem: pro.material[index]),
+                                Matdetails(materialItem: item),
                           ),
                         );
                       },
