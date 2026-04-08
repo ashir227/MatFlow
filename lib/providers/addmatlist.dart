@@ -21,11 +21,12 @@ class AddmatProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void deletematerial() {
+  void deletematerial(Material newmatitems) {
+    List<Materialitem> material = [];
+
     var box = Hive.box("material");
 
-    box.delete(material);
-    material = box.values.cast<Materialitem>().toList();
+    box.delete(newmatitems);
 
     notifyListeners();
   }
