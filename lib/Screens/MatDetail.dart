@@ -4,39 +4,72 @@ import 'package:matflow/providers/addmatlist.dart';
 import 'package:provider/provider.dart';
 
 class Matdetails extends StatelessWidget {
-  final Materialitem materialItem; // Ye data screen ko milega
+  final Materialitem materialItem;
+
   const Matdetails({super.key, required this.materialItem});
 
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
+
     return Scaffold(
+      appBar: AppBar(title: Text("Material Details")),
       body: Consumer<AddmatProvider>(
-        builder: (context, pro, index) {
-          return Container(
-            width: double.infinity,
+        builder: (context, pro, child) {
+          return SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                // ✅ Detail Card
                 Card(
                   margin: EdgeInsets.symmetric(
-                    vertical: MediaQuery.of(context).size.height * 0.1,
+                    horizontal: w * 0.05,
+                    vertical: h * 0.02,
                   ),
-                  child: Column(
-                    children: [
-                      Text(materialItem.name),
-                      Text(materialItem.consumption.toString()),
-                      Text(materialItem.matinitstk.toString()),
-                      Text(materialItem.thresold.toString()),
-                    ],
+                  child: Padding(
+                    padding: EdgeInsets.all(w * 0.04),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Title
+                        Text(
+                          materialItem.name,
+                          style: TextStyle(
+                            fontSize: w * 0.05,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+
+                        SizedBox(height: h * 0.02),
+
+                        // Details
+                        _buildRow(
+                          "Consumption",
+                          materialItem.consumption.toString(),
+                        ),
+                        SizedBox(height: h * 0.01),
+
+                        _buildRow(
+                          "Initial Stock",
+                          materialItem.matinitstk.toString(),
+                        ),
+                        SizedBox(height: h * 0.01),
+
+                        _buildRow(
+                          "Threshold",
+                          materialItem.thresold.toString(),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
 
-                Consumer<AddmatProvider>(
-                  builder: (context, pro, index) {
-                    //  final  item = pro.material[index];
-                    return ElevatedButton(
+                // ✅ Delete Button
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: w * 0.05),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
                       onPressed: () {
                         context.read<AddmatProvider>().deletematerial(
                           materialItem,
@@ -44,14 +77,27 @@ class Matdetails extends StatelessWidget {
                         Navigator.pop(context);
                       },
                       child: Text("Delete"),
-                    );
-                  },
+                    ),
+                  ),
                 ),
               ],
             ),
           );
         },
       ),
+    );
+  }
+
+  // ✅ Reusable Row (Professional Look)
+  Widget _buildRow(String title, String value) {
+    return Row(
+      children: [
+        Expanded(
+          flex: 2,
+          child: Text(title, style: TextStyle(fontWeight: FontWeight.w500)),
+        ),
+        Expanded(flex: 3, child: Text(value)),
+      ],
     );
   }
 }
