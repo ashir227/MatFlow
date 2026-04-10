@@ -22,7 +22,7 @@ class AddmatProvider extends ChangeNotifier {
   }
 
   void deletematerial(Materialitem item) {
-    //Is me Itemident is liye banaya ha ke ye material model me se batay ga kon sa index wali key delete karni ha
+    //Is me item is liye banaya ha ke ye material model me se batay ga kon sa index wali key delete karni ha
     // List<Materialitem> material = [];
 
     var box = Hive.box("materials");

@@ -9,6 +9,8 @@ class Matdetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double w = MediaQuery.of(context).size.width;
+    double h = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Consumer<AddmatProvider>(
         builder: (context, pro, index) {

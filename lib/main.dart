@@ -14,6 +14,7 @@ void main() async {
 
   // Initialize Hive with app documents directory
   final directory = await getApplicationDocumentsDirectory();
+
   await Hive.initFlutter(directory.path);
   Hive.registerAdapter(MaterialitemAdapter());
   // Open Hive box
