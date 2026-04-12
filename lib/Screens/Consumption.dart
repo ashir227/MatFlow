@@ -18,7 +18,7 @@ class ConsMat extends StatelessWidget {
         ),
         backgroundColor: Appcolor.Mat,
       ),
-      body: Column(children: [TextFormField()]),
+      body: Column(children: [Form(child: Column())]),
     );
   }
 }
