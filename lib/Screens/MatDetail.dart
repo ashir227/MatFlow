@@ -62,7 +62,7 @@ class Matdetails extends StatelessWidget {
                   ),
                 ),
 
-                // ✅ Delete Button
+                // Delete Button
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: w * 0.05),
                   child: SizedBox(
@@ -86,7 +86,6 @@ class Matdetails extends StatelessWidget {
     );
   }
 
-  // ✅ Reusable Row (Professional Look)
   Widget _item(String title, String value, double w) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8),
@@ -95,12 +94,16 @@ class Matdetails extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: w * 0.035, color: Colors.grey),
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: w * 0.035,
+              color: Colors.grey,
+            ),
           ),
           SizedBox(height: 4),
           Text(
             value,
-            style: TextStyle(fontSize: w * 0.05, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: w * 0.05, fontWeight: FontWeight.w700),
           ),
         ],
       ),
