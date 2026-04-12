@@ -22,43 +22,41 @@ class Matdetails extends StatelessWidget {
               children: [
                 // ✅ Detail Card
                 Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  elevation: 4,
                   margin: EdgeInsets.symmetric(
                     horizontal: w * 0.05,
                     vertical: h * 0.02,
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(w * 0.04),
+                    padding: EdgeInsets.all(w * 0.05),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Title
-                        Text(
-                          materialItem.name,
-                          style: TextStyle(
-                            fontSize: w * 0.05,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-
-                        SizedBox(height: h * 0.02),
-
-                        // Details
-                        _buildRow(
-                          "Consumption",
-                          materialItem.consumption.toString(),
-                        ),
-                        SizedBox(height: h * 0.01),
-
-                        _buildRow(
-                          "Initial Stock",
+                        _item(
+                          "Current Stock",
                           materialItem.matinitstk.toString(),
+                          w,
                         ),
-                        SizedBox(height: h * 0.01),
+                        _divider(),
 
-                        _buildRow(
-                          "Threshold",
-                          materialItem.thresold.toString(),
+                        _item(
+                          "Per Piece Consumption",
+                          materialItem.consumption.toString(),
+                          w,
                         ),
+                        _divider(),
+
+                        _item(
+                          "Minimum Level",
+                          materialItem.thresold.toString(),
+                          w,
+                        ),
+                        _divider(),
+
+                        _item("Max Producible Pieces", "1000", w),
                       ],
                     ),
                   ),
@@ -89,15 +87,27 @@ class Matdetails extends StatelessWidget {
   }
 
   // ✅ Reusable Row (Professional Look)
-  Widget _buildRow(String title, String value) {
-    return Row(
-      children: [
-        Expanded(
-          flex: 2,
-          child: Text(title, style: TextStyle(fontWeight: FontWeight.w500)),
-        ),
-        Expanded(flex: 3, child: Text(value)),
-      ],
+  Widget _item(String title, String value, double w) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(fontSize: w * 0.035, color: Colors.grey),
+          ),
+          SizedBox(height: 4),
+          Text(
+            value,
+            style: TextStyle(fontSize: w * 0.05, fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
     );
+  }
+
+  Widget _divider() {
+    return Divider(thickness: 1);
   }
 }
