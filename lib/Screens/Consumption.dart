@@ -38,14 +38,14 @@ class ConsMat extends StatelessWidget {
                     txt: "Select Material",
                     errorText: "h",
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: h * 0.07),
                   AddMTextfield(
                     validator: (value) {
                       if (value == null && value <= 0) {}
                     },
                     controller: Pieces,
                     txt: "Enter Production",
-                    errorText: "dd",
+                    errorText: "Error",
                   ),
                 ],
               ),
