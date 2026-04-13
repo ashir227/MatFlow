@@ -43,7 +43,7 @@ class AddMaterial extends StatelessWidget {
                   key: _formKey,
                   child: Column(
                     children: [
-                      SizedBox(height: 40),
+                      SizedBox(height: h * 0.044),
                       AddMTextfield(
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -51,14 +51,13 @@ class AddMaterial extends StatelessWidget {
                           }
                         },
 
-                        txt:
-                            "Material Name             ${IconBut(icon: Icon(Icons.add))}",
+                        txt: "Material Name",
                         controller: matnamecontroller,
                         errorText: '',
                       ),
-                      SizedBox(height: 25),
+                      SizedBox(height: h * 0.033),
                       DropDown(),
-                      SizedBox(height: 25),
+                      SizedBox(height: h * 0.033),
                       AddMTextfield(
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -77,7 +76,7 @@ class AddMaterial extends StatelessWidget {
                         controller: consumpcontroller,
                         errorText: '',
                       ),
-                      SizedBox(height: 25),
+                      SizedBox(height: h * 0.033),
                       AddMTextfield(
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -89,7 +88,7 @@ class AddMaterial extends StatelessWidget {
 
                         errorText: '',
                       ),
-                      SizedBox(height: 25),
+                      SizedBox(height: h * 0.033),
                       AddMTextfield(
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -100,7 +99,7 @@ class AddMaterial extends StatelessWidget {
                         controller: minstkcontroller,
                         errorText: '',
                       ),
-                      SizedBox(height: 37),
+                      SizedBox(height: h * 0.05),
                       CustomButton.elevatedB(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
@@ -122,7 +121,7 @@ class AddMaterial extends StatelessWidget {
 
                         Bcolor: Appcolor.Elevbtnclr,
                         Padding: EdgeInsets.symmetric(
-                          horizontal: 135,
+                          horizontal: h * 0.10,
                           vertical: 13,
                         ),
                         text: "Save",
