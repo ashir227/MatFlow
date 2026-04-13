@@ -19,6 +19,8 @@ class AddMaterial extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    var w = MediaQuery.of(context).size.width;
+    var h = MediaQuery.of(context).size.height;
     return GestureDetector(
       onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
