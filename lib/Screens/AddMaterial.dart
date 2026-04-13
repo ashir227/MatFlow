@@ -121,7 +121,7 @@ class AddMaterial extends StatelessWidget {
 
                         Bcolor: Appcolor.Elevbtnclr,
                         Padding: EdgeInsets.symmetric(
-                          horizontal: h * 0.10,
+                          horizontal: h * 0.16,
                           vertical: 13,
                         ),
                         text: "Save",
