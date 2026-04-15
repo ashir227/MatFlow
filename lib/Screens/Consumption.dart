@@ -41,7 +41,16 @@ class ConsMat extends StatelessWidget {
                   SizedBox(height: h * 0.07),
                   AddMTextfield(
                     validator: (value) {
-                      if (value == null && value <= 0) {}
+                      if (value == null && value == value.isEmpty) {
+                        return "Consumption QTY Required";
+                      }
+                      int? numm = int.tryParse(value);
+                      if (numm == null) {
+                        return "Enter valid No";
+                      }
+                      if (numm < 0) {
+                        return "Enter Positive QTY";
+                      }
                     },
                     controller: Pieces,
                     txt: "Enter Production",
