@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/Widgets/Textfield.dart';
+import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
 
 class ConsMat extends StatelessWidget {
@@ -39,6 +40,8 @@ class ConsMat extends StatelessWidget {
                     errorText: "h",
                   ),
                   SizedBox(height: h * 0.07),
+                  DropDown(),
+
                   AddMTextfield(
                     validator: (value) {
                       if (value == null && value == value.isEmpty) {
@@ -55,6 +58,12 @@ class ConsMat extends StatelessWidget {
                     controller: Pieces,
                     txt: "Enter Production",
                     errorText: "Error",
+                  ),
+                  SizedBox(height: h * 0.8),
+                  CustomButton.elevatedB(
+                    onPressed: () {},
+                    Bcolor: Appcolor.Mat,
+                    text: "ooooo",
                   ),
                 ],
               ),
