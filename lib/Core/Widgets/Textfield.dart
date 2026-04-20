@@ -89,7 +89,6 @@ class AddMTextfield extends StatelessWidget {
 }
 
 class DropDown extends StatefulWidget {
-  // final TextEditingController controller;
   const DropDown({super.key});
 
   @override
@@ -102,23 +101,21 @@ class _DropDownState extends State<DropDown> {
 
   @override
   Widget build(BuildContext context) {
-    // String? textt;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: EdgeInsetsGeometry.only(left: 6, bottom: 4),
+        const Padding(
+          padding: EdgeInsets.only(left: 6, bottom: 4),
           child: Text(
-            textAlign: TextAlign.left,
-
             "Unit",
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
           ),
         ),
         SizedBox(
           height: 50,
-          child: DropdownButtonFormField(
-            initialValue: caterories[0],
+          child: DropdownButtonFormField<String>(
+            value: selectedCategory, // ✅ initialValue hata diya
+            hint: const Text("Select Unit"),
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(11),
@@ -129,10 +126,13 @@ class _DropDownState extends State<DropDown> {
               ),
             ),
             items: caterories.map((item) {
-              return DropdownMenuItem<String>(child: Text(item), value: item);
+              return DropdownMenuItem<String>(value: item, child: Text(item));
             }).toList(),
+
             onChanged: (value) {
-              selectedCategory = value;
+              setState(() {
+                selectedCategory = value; // ✅ setState add
+              });
             },
           ),
         ),
