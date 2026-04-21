@@ -5,6 +5,6 @@ class Consignment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return GestureDetector(child: Scaffold(appBar: AppBar()));
   }
 }

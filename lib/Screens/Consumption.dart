@@ -27,22 +27,31 @@ class ConsMat extends StatelessWidget {
           ),
           backgroundColor: Appcolor.Mat,
         ),
-        body: Container(
-          margin: EdgeInsets.symmetric(horizontal: w * 0.07),
-          child: Column(
-            children: [
-              // Form(
-              //   child: Column(
-              //    children: [
-              //     AddMTextfield(validator: (value){
-              //       if (value == null || value.isEmpty) {
-              //         return "";
-              //       }
-              //     }, controller: , txt: txt, errorText: errorText)
-              //    ],
-              //   ),
-              // ),
-            ],
+        body: SingleChildScrollView(
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: w * 0.07),
+            child: Column(
+              children: [
+                Form(
+                  key: _formkey,
+                  child: Column(
+                    children: [
+                      SizedBox(height: h * 0.044),
+                      DropDown(),
+
+                      AddMTextfield(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {}
+                        },
+                        controller: selmat,
+                        txt: "Sale",
+                        errorText: "errorText",
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
