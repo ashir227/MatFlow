@@ -36,7 +36,7 @@ class AddMaterial extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: EdgeInsets.symmetric(horizontal: w * 0.05),
             child: Column(
               children: [
                 Form(
@@ -50,7 +50,6 @@ class AddMaterial extends StatelessWidget {
                             return "Name Required";
                           }
                         },
-
                         txt: "Material Name",
                         controller: matnamecontroller,
                         errorText: '',
@@ -122,7 +121,7 @@ class AddMaterial extends StatelessWidget {
                         Bcolor: Appcolor.Elevbtnclr,
                         Padding: EdgeInsets.symmetric(
                           horizontal: h * 0.16,
-                          vertical: 13,
+                          vertical: w * 0.035,
                         ),
                         text: "Save",
                       ),
