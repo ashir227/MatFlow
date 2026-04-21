@@ -14,33 +14,36 @@ class ConsMat extends StatelessWidget {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
-    return Scaffold(
-      backgroundColor: Appcolor.allbckgrnd,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Titletext(txt: "Add Consumption"),
-        toolbarHeight: 100,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.circular(6),
+    return GestureDetector(
+      onTap: FocusScope.of(context).unfocus,
+      child: Scaffold(
+        backgroundColor: Appcolor.allbckgrnd,
+        appBar: AppBar(
+          centerTitle: true,
+          title: Titletext(txt: "Add Consumption"),
+          toolbarHeight: 100,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusGeometry.circular(6),
+          ),
+          backgroundColor: Appcolor.Mat,
         ),
-        backgroundColor: Appcolor.Mat,
-      ),
-      body: Container(
-        margin: EdgeInsets.symmetric(horizontal: w * 0.07),
-        child: Column(
-          children: [
-            // Form(
-            //   child: Column(
-            //    children: [
-            //     AddMTextfield(validator: (value){
-            //       if (value == null || value.isEmpty) {
-            //         return "";
-            //       }
-            //     }, controller: , txt: txt, errorText: errorText)
-            //    ],
-            //   ),
-            // ),
-          ],
+        body: Container(
+          margin: EdgeInsets.symmetric(horizontal: w * 0.07),
+          child: Column(
+            children: [
+              // Form(
+              //   child: Column(
+              //    children: [
+              //     AddMTextfield(validator: (value){
+              //       if (value == null || value.isEmpty) {
+              //         return "";
+              //       }
+              //     }, controller: , txt: txt, errorText: errorText)
+              //    ],
+              //   ),
+              // ),
+            ],
+          ),
         ),
       ),
     );
