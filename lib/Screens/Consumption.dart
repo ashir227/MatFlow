@@ -50,8 +50,8 @@ class ConsMat extends StatelessWidget {
                       SizedBox(height: h * 0.2),
                       CustomButton.elevatedB(
                         onPressed: () {},
-                        Bcolor: Bcolor,
-                        text: text,
+                        Bcolor: Appcolor.Mat,
+                        text: "Start",
                       ),
                     ],
                   ),
