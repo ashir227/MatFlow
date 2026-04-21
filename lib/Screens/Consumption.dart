@@ -47,7 +47,7 @@ class ConsMat extends StatelessWidget {
                         txt: "Sale",
                         errorText: "errorText",
                       ),
-                      SizedBox(height: h * 0.2),
+                      SizedBox(height: h * 0.43),
                       CustomButton.elevatedB(
                         onPressed: () {},
                         Bcolor: Appcolor.Mat,
