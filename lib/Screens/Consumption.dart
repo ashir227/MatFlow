@@ -38,7 +38,7 @@ class ConsMat extends StatelessWidget {
                     children: [
                       SizedBox(height: h * 0.044),
                       DropDown(),
-
+                      SizedBox(height: h * 0.04),
                       AddMTextfield(
                         validator: (value) {
                           if (value == null || value.isEmpty) {}
@@ -46,6 +46,12 @@ class ConsMat extends StatelessWidget {
                         controller: selmat,
                         txt: "Sale",
                         errorText: "errorText",
+                      ),
+                      SizedBox(height: h * 0.2),
+                      CustomButton.elevatedB(
+                        onPressed: () {},
+                        Bcolor: Bcolor,
+                        text: text,
                       ),
                     ],
                   ),
