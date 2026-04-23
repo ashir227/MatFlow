@@ -44,13 +44,13 @@ class ConsMat extends StatelessWidget {
                           if (value == null || value.isEmpty) {}
                         },
                         controller: selmat,
-                        txt: "Sale",
+                        txt: "Production QTY",
                         errorText: "errorText",
                       ),
                       SizedBox(height: h * 0.43),
                       CustomButton.elevatedB(
                         onPressed: () {},
-                        Bcolor: Appcolor.Mat,
+                        Bcolor: Appcolor.Flow,
                         text: "Start",
                       ),
                     ],
