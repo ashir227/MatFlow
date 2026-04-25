@@ -11,10 +11,13 @@ class Materialitem extends HiveObject {
   int matinitstk;
   @HiveField(3)
   int thresold;
+  @HiveField(4)
+  String unit;
   Materialitem({
     required this.name,
     required this.consumption,
     required this.matinitstk,
     required this.thresold,
+    required this.unit,
   });
 }
