@@ -3,11 +3,17 @@ import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/Widgets/Textfield.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
+import 'package:matflow/models/material_consig.dart';
+import 'package:matflow/models/material_item.dart';
+import 'package:matflow/providers/addconsignment.dart';
+import 'package:provider/provider.dart';
 
 class Consignment extends StatelessWidget {
   Consignment({super.key});
-  TextEditingController sell = TextEditingController();
-  TextEditingController consi = TextEditingController();
+  TextEditingController Unitcontrol = TextEditingController();
+  TextEditingController Qtycontrol = TextEditingController();
+  Materialitem? selecteditem;
+  final _formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -26,27 +32,40 @@ class Consignment extends StatelessWidget {
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: w * 0.07),
-            child: Column(
-              children: [
-                SizedBox(height: h * 0.044),
-                DropDown(),
-                SizedBox(height: h * 0.04),
+            child: Form(
+              child: Column(
+                key: _formkey,
+                children: [
+                  SizedBox(height: h * 0.044),
+                  DropDown(),
+                  SizedBox(height: h * 0.04),
 
-                AddMTextfield(
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {}
-                  },
-                  controller: sell,
-                  txt: "Consignment QTY",
-                  errorText: "errorText",
-                ),
-                SizedBox(height: h * 0.43),
-                CustomButton.elevatedB(
-                  onPressed: () {},
-                  Bcolor: Appcolor.Flow,
-                  text: "Start",
-                ),
-              ],
+                  AddMTextfield(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {}
+                    },
+                    controller: Qtycontrol,
+                    txt: "Consignment QTY",
+                    errorText: "errorText",
+                  ),
+                  SizedBox(height: h * 0.43),
+                  CustomButton.elevatedB(
+                    onPressed: () {
+                      if (_formkey.currentState!.validate()) {
+                        ConsigModel newconsig = ConsigModel(
+                          Unit: Unitcontrol.text,
+                          Qty: int.parse(Qtycontrol.text),
+                        );
+                        Unitcontrol.clear();
+                        Qtycontrol.clear();
+                      }
+                      //  context.read<ConsigProvider>().addconsig(newconsig)
+                    },
+                    Bcolor: Appcolor.Flow,
+                    text: "Start",
+                  ),
+                ],
+              ),
             ),
           ),
         ),

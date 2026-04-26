@@ -3,12 +3,15 @@ import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/Widgets/Textfield.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
+import 'package:matflow/models/mateial_Con.dart';
 import 'package:matflow/models/material_item.dart';
+import 'package:matflow/providers/addconsumption.dart';
+import 'package:provider/provider.dart';
 
 class ConsMat extends StatelessWidget {
   ConsMat({super.key});
-  TextEditingController selmat = TextEditingController();
-  TextEditingController Pieces = TextEditingController();
+  TextEditingController Unitscontroller = TextEditingController();
+  TextEditingController Qtycontroller = TextEditingController();
   final _formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -43,13 +46,25 @@ class ConsMat extends StatelessWidget {
                         validator: (value) {
                           if (value == null || value.isEmpty) {}
                         },
-                        controller: selmat,
+                        controller: Qtycontroller,
                         txt: "Production QTY",
                         errorText: "errorText",
                       ),
                       SizedBox(height: h * 0.43),
                       CustomButton.elevatedB(
-                        onPressed: () {},
+                        onPressed: () {
+                          if (_formkey.currentState!.validate()) {
+                            ConModel newcons = ConModel(
+                              Unit: Unitscontroller.text,
+                              Qty: int.parse(Qtycontroller.text),
+                            );
+                            context.read<Consumeprovider>().addconsumption(
+                              newcons,
+                            );
+                            Qtycontroller.clear();
+                            Unitscontroller.clear();
+                          }
+                        },
                         Bcolor: Appcolor.Flow,
                         text: "Start",
                       ),

@@ -1,7 +1,7 @@
 class ConModel {
-  String Prices;
+  String Unit;
 
-  String MatName;
+  int Qty;
 
-  ConModel({required this.Prices, required this.MatName});
+  ConModel({required this.Unit, required this.Qty});
 }
