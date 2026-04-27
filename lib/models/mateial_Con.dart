@@ -1,7 +1,7 @@
 class ConModel {
   String Unit;
 
-  int Qty;
+  num Qty;
 
   ConModel({required this.Unit, required this.Qty});
 }
