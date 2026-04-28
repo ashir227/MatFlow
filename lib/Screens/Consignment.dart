@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/Widgets/Textfield.dart';
+import 'package:matflow/Core/Widgets/addConsig_drop.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/models/material_consig.dart';
@@ -9,13 +10,22 @@ import 'package:matflow/providers/addconsignment.dart';
 import 'package:matflow/providers/addmatlist.dart';
 import 'package:provider/provider.dart';
 
-class Consignment extends StatelessWidget {
+class Consignment extends StatefulWidget {
   Consignment({super.key});
+
+  @override
+  State<Consignment> createState() => _ConsignmentState();
+}
+
+class _ConsignmentState extends State<Consignment> {
   TextEditingController Unitcontrol = TextEditingController();
+
   TextEditingController Qtycontrol = TextEditingController();
+
   Materialitem? selecteditem;
 
   final _formkey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     final pro = context.watch<AddmatProvider>();
@@ -41,7 +51,15 @@ class Consignment extends StatelessWidget {
                 key: _formkey,
                 children: [
                   SizedBox(height: h * 0.044),
-                  DropDown(),
+                  MaterialDropDown(
+                    items: pro.material,
+                    selectedItem: selecteditem,
+                    onChanged: (value) {
+                      setState(() {
+                        selecteditem = value;
+                      });
+                    },
+                  ),
                   SizedBox(height: h * 0.04),
 
                   AddMTextfield(
