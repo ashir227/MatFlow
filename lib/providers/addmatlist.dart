@@ -31,4 +31,10 @@ class AddmatProvider extends ChangeNotifier {
 
     notifyListeners();
   }
+
+  void addconsign(Materialitem item, double qty) {
+    item.matinitstk = item.matinitstk + qty;
+    item.save();
+    notifyListeners();
+  }
 }
