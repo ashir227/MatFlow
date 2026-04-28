@@ -6,7 +6,6 @@ import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/models/material_consig.dart';
 import 'package:matflow/models/material_item.dart';
-import 'package:matflow/providers/addconsignment.dart';
 import 'package:matflow/providers/addmatlist.dart';
 import 'package:provider/provider.dart';
 
@@ -76,7 +75,7 @@ class _ConsignmentState extends State<Consignment> {
                       if (_formkey.currentState!.validate()) {
                         ConsigModel newconsig = ConsigModel(
                           Unit: Unitcontrol.text,
-                          Qty: int.parse(Qtycontrol.text),
+                          Qty: double.parse(Qtycontrol.text),
                         );
                         Unitcontrol.clear();
                         Qtycontrol.clear();
