@@ -6,6 +6,7 @@ import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/models/material_consig.dart';
 import 'package:matflow/models/material_item.dart';
 import 'package:matflow/providers/addconsignment.dart';
+import 'package:matflow/providers/addmatlist.dart';
 import 'package:provider/provider.dart';
 
 class Consignment extends StatelessWidget {
@@ -13,9 +14,12 @@ class Consignment extends StatelessWidget {
   TextEditingController Unitcontrol = TextEditingController();
   TextEditingController Qtycontrol = TextEditingController();
   Materialitem? selecteditem;
+
   final _formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    final pro = context.watch<AddmatProvider>();
+
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return GestureDetector(
