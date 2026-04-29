@@ -37,4 +37,9 @@ class AddmatProvider extends ChangeNotifier {
     item.save();
     notifyListeners();
   }
+
+  void addconsume(Materialitem item, double pcs) {
+    item.matinitstk = item.matinitstk * item.consumption;
+    item.matinitstk = item.matinitstk - pcs;
+  }
 }
