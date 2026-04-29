@@ -104,7 +104,7 @@ class AddMaterial extends StatelessWidget {
                           if (_formKey.currentState!.validate()) {
                             Materialitem newmatitem = Materialitem(
                               name: matnamecontroller.text,
-                              matinitstk: int.parse(initstkcontroller.text),
+                              matinitstk: double.parse(initstkcontroller.text),
                               thresold: int.parse(minstkcontroller.text),
                               consumption: int.parse(consumpcontroller.text),
                               unit: unitcontroller.text,

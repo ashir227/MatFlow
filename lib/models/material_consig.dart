@@ -1,5 +1,5 @@
 class ConsigModel {
   String? Unit;
-  int? Qty;
+  double? Qty;
   ConsigModel({required this.Unit, required this.Qty});
 }

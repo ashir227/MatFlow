@@ -8,7 +8,7 @@ class Materialitem extends HiveObject {
   @HiveField(1)
   int consumption;
   @HiveField(2)
-  int matinitstk;
+  double matinitstk;
   @HiveField(3)
   int thresold;
   @HiveField(4)

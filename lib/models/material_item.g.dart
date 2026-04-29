@@ -19,7 +19,7 @@ class MaterialitemAdapter extends TypeAdapter<Materialitem> {
     return Materialitem(
       name: fields[0] as String,
       consumption: fields[1] as int,
-      matinitstk: fields[2] as int,
+      matinitstk: fields[2] as double,
       thresold: fields[3] as int,
       unit: fields[4] as String,
     );
