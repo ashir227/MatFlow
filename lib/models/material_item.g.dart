@@ -21,7 +21,6 @@ class MaterialitemAdapter extends TypeAdapter<Materialitem> {
       consumption: fields[1] as int,
       matinitstk: fields[2] as double,
       thresold: fields[3] as int,
-      unit: fields[4] as String,
     );
   }
 
@@ -36,9 +35,7 @@ class MaterialitemAdapter extends TypeAdapter<Materialitem> {
       ..writeByte(2)
       ..write(obj.matinitstk)
       ..writeByte(3)
-      ..write(obj.thresold)
-      ..writeByte(4)
-      ..write(obj.unit);
+      ..write(obj.thresold);
   }
 
   @override

@@ -17,7 +17,7 @@ class Consignment extends StatefulWidget {
 }
 
 class _ConsignmentState extends State<Consignment> {
-  TextEditingController Unitcontrol = TextEditingController();
+  // TextEditingController Unitcontrol = TextEditingController();
 
   TextEditingController Qtycontrol = TextEditingController();
 
@@ -46,8 +46,9 @@ class _ConsignmentState extends State<Consignment> {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: w * 0.07),
             child: Form(
+              key: _formkey,
+
               child: Column(
-                key: _formkey,
                 children: [
                   SizedBox(height: h * 0.044),
                   MaterialDropDown(
@@ -73,14 +74,19 @@ class _ConsignmentState extends State<Consignment> {
                   CustomButton.elevatedB(
                     onPressed: () {
                       if (_formkey.currentState!.validate()) {
-                        ConsigModel newconsig = ConsigModel(
-                          Unit: Unitcontrol.text,
-                          Qty: double.parse(Qtycontrol.text),
+                        if (selecteditem == null) {
+                          print("Select material");
+                          return;
+                        }
+                        ;
+                        double qty = double.parse(Qtycontrol.text);
+                        context.read<AddmatProvider>().addconsign(
+                          selecteditem!,
+                          qty,
                         );
-                        Unitcontrol.clear();
                         Qtycontrol.clear();
+                        Navigator.pop(context);
                       }
-                      //  context.read<ConsigProvider>().addconsig(newconsig)
                     },
                     Bcolor: Appcolor.Flow,
                     text: "Start",
