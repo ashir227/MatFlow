@@ -78,7 +78,6 @@ class _ConsignmentState extends State<Consignment> {
                           print("Select material");
                           return;
                         }
-                        ;
                         double qty = double.parse(Qtycontrol.text);
                         context.read<AddmatProvider>().addconsign(
                           selecteditem!,
