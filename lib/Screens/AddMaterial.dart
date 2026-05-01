@@ -70,7 +70,9 @@ class _AddMaterialState extends State<AddMaterial> {
                       SizedBox(height: h * 0.033),
                       DropDown(
                         onChanged: (value) {
-                          selectedUnit = value;
+                          setState(() {
+                            selectedUnit = value;
+                          });
                         },
                       ),
                       SizedBox(height: h * 0.033),
