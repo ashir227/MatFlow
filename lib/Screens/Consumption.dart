@@ -1,22 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/Widgets/Textfield.dart';
+import 'package:matflow/Core/Widgets/addConsig_drop.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/models/mateial_Con.dart';
 import 'package:matflow/models/material_item.dart';
 import 'package:matflow/providers/addconsumption.dart';
+import 'package:matflow/providers/addmatlist.dart';
 import 'package:provider/provider.dart';
 
-class ConsMat extends StatelessWidget {
+class ConsMat extends StatefulWidget {
   ConsMat({super.key});
+
+  @override
+  State<ConsMat> createState() => _ConsMatState();
+}
+
+class _ConsMatState extends State<ConsMat> {
   TextEditingController Unitscontroller = TextEditingController();
+
   TextEditingController Qtycontroller = TextEditingController();
+
   final _formkey = GlobalKey<FormState>();
+
+  Materialitem? selecteditem;
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
+    var pro = context.watch<AddmatProvider>();
     return GestureDetector(
       onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
@@ -40,7 +54,15 @@ class ConsMat extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(height: h * 0.044),
-                      DropDown(),
+                      MaterialDropDown(
+                        items: pro.material,
+                        selectedItem: selecteditem,
+                        onChanged: (value) {
+                          setState(() {
+                            selecteditem = value;
+                          });
+                        },
+                      ),
                       SizedBox(height: h * 0.04),
                       AddMTextfield(
                         validator: (value) {
@@ -54,16 +76,16 @@ class ConsMat extends StatelessWidget {
                       CustomButton.elevatedB(
                         onPressed: () {
                           if (_formkey.currentState!.validate()) {
-                            ConModel newcons = ConModel(
-                              Unit: Unitscontroller.text,
-                              Qty: int.parse(Qtycontroller.text),
-                            );
-                            context.read<Consumeprovider>().addconsumption(
-                              newcons,
-                            );
-                            Qtycontroller.clear();
-                            Unitscontroller.clear();
+                            if (selecteditem == null) {
+                              print("Select material");
+                              return;
+                            }
                           }
+                          double Pcs = double.parse(Qtycontroller.text);
+                          context.read<AddmatProvider>().addconsume(
+                            selecteditem!,
+                            Pcs,
+                          );
                         },
                         Bcolor: Appcolor.Flow,
                         text: "Start",
