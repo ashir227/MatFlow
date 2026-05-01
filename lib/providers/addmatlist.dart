@@ -38,10 +38,15 @@ class AddmatProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addconsume(Materialitem item, double pcs) {
+  String? addconsume(Materialitem item, double pcs) {
     var PcsCon = pcs * item.consumption;
-    item.matinitstk = item.matinitstk - PcsCon;
-    item.save();
-    notifyListeners();
+    if (PcsCon <= item.matinitstk) {
+      item.matinitstk = item.matinitstk - PcsCon;
+      item.save();
+      notifyListeners();
+      return null;
+    } else {
+      return "Not enough stock available";
+    }
   }
 }

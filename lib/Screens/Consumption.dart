@@ -24,7 +24,6 @@ class _ConsMatState extends State<ConsMat> {
   final _formkey = GlobalKey<FormState>();
 
   Materialitem? selecteditem;
-
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -68,7 +67,9 @@ class _ConsMatState extends State<ConsMat> {
                           if (value == null || value.isEmpty) {
                             return ("Enter valid Qty");
                           }
-                          var enterqty = double.tryParse(value);
+                          if (value < 0) {
+                            return ("Enter Positive value");
+                          }
                         },
                         controller: Qtycontroller,
                         txt: "Production QTY",
