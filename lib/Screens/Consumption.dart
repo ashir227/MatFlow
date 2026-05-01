@@ -67,7 +67,8 @@ class _ConsMatState extends State<ConsMat> {
                           if (value == null || value.isEmpty) {
                             return ("Enter valid Qty");
                           }
-                          if (value < 0) {
+                          double? numm = double.tryParse(value);
+                          if (numm! < 0) {
                             return ("Enter Positive value");
                           }
                         },
