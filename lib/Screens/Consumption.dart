@@ -65,12 +65,16 @@ class _ConsMatState extends State<ConsMat> {
                       SizedBox(height: h * 0.04),
                       AddMTextfield(
                         validator: (value) {
-                          if (value == null || value.isEmpty) {}
+                          if (value == null || value.isEmpty) {
+                            return ("Enter valid Qty");
+                          }
+                          var enterqty = double.tryParse(value);
                         },
                         controller: Qtycontroller,
                         txt: "Production QTY",
                         errorText: "errorText",
                       ),
+
                       SizedBox(height: h * 0.43),
                       CustomButton.elevatedB(
                         onPressed: () {

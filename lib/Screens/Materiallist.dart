@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/Screens/MatDetail.dart';
+import 'package:matflow/models/material_item.dart';
 import 'package:matflow/providers/addmatlist.dart';
 import 'package:provider/provider.dart';
 
@@ -29,6 +30,7 @@ class MatlistScr extends StatelessWidget {
                 final item = pro.material[index];
                 return Column(
                   children: [
+                    Row(children: []),
                     ListTile(
                       onTap: () {
                         Navigator.push(
@@ -44,7 +46,7 @@ class MatlistScr extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(pro.material[index].name),
-                          Text("Status"),
+                          matStatus(item),
                         ],
                       ),
                     ),
@@ -57,4 +59,16 @@ class MatlistScr extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget matStatus(Materialitem itemz) {
+  return Text(
+    itemz.matinitstk < itemz.thresold ? "Low" : "OK",
+    style: TextStyle(
+      fontWeight: FontWeight.w600,
+      color: itemz.matinitstk < itemz.thresold
+          ? Colors.red
+          : const Color.fromARGB(255, 68, 160, 71),
+    ),
+  );
 }
