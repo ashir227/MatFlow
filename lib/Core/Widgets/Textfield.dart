@@ -89,7 +89,8 @@ class AddMTextfield extends StatelessWidget {
 }
 
 class DropDown extends StatefulWidget {
-  const DropDown({super.key});
+  final Function(String?) onChanged;
+  DropDown({super.key, required this.onChanged});
 
   @override
   State<DropDown> createState() => _DropDownState();
@@ -133,6 +134,7 @@ class _DropDownState extends State<DropDown> {
               setState(() {
                 selectedCategory = value; // ✅ setState add
               });
+              widget.onChanged(value);
             },
           ),
         ),

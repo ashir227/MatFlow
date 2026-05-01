@@ -1,4 +1,5 @@
 import 'dart:ffi';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/Text.dart';
 import 'package:matflow/Core/Widgets/Textfield.dart';
@@ -9,14 +10,26 @@ import 'package:matflow/models/material_item.dart';
 import 'package:matflow/providers/addmatlist.dart';
 import 'package:provider/provider.dart';
 
-class AddMaterial extends StatelessWidget {
+class AddMaterial extends StatefulWidget {
   AddMaterial({super.key});
+
+  @override
+  State<AddMaterial> createState() => _AddMaterialState();
+}
+
+class _AddMaterialState extends State<AddMaterial> {
   final matnamecontroller = TextEditingController();
-  final unitcontroller = TextEditingController();
+
+  // final unitcontroller = TextEditingController();
   final consumpcontroller = TextEditingController();
+
   final initstkcontroller = TextEditingController();
+
   final minstkcontroller = TextEditingController();
+
   final _formKey = GlobalKey<FormState>();
+
+  String? selectedUnit;
   @override
   Widget build(BuildContext context) {
     var w = MediaQuery.of(context).size.width;
@@ -55,14 +68,18 @@ class AddMaterial extends StatelessWidget {
                         errorText: '',
                       ),
                       SizedBox(height: h * 0.033),
-                      DropDown(),
+                      DropDown(
+                        onChanged: (value) {
+                          selectedUnit = value;
+                        },
+                      ),
                       SizedBox(height: h * 0.033),
                       AddMTextfield(
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return "Consumption QTY Required";
                           }
-                          int? numb = int.tryParse(value);
+                          double? numb = double.tryParse(value);
                           if (numb == null) {
                             return "Enter valid number";
                           }
@@ -104,10 +121,13 @@ class AddMaterial extends StatelessWidget {
                           if (_formKey.currentState!.validate()) {
                             Materialitem newmatitem = Materialitem(
                               name: matnamecontroller.text,
+                              unit: selectedUnit!,
                               matinitstk: double.parse(initstkcontroller.text),
                               thresold: int.parse(minstkcontroller.text),
-                              consumption: int.parse(consumpcontroller.text),
+                              consumption: double.parse(consumpcontroller.text),
                             );
+                            print("Name : ${matnamecontroller.text}");
+                            print("Unit : $selectedUnit");
                             context.read<AddmatProvider>().addmaterial(
                               newmatitem,
                             );

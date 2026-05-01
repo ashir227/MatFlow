@@ -18,23 +18,26 @@ class MaterialitemAdapter extends TypeAdapter<Materialitem> {
     };
     return Materialitem(
       name: fields[0] as String,
-      consumption: fields[1] as int,
-      matinitstk: fields[2] as double,
-      thresold: fields[3] as int,
+      unit: fields[1] as String,
+      consumption: fields[2] as double,
+      matinitstk: fields[3] as double,
+      thresold: fields[4] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, Materialitem obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.name)
       ..writeByte(1)
-      ..write(obj.consumption)
+      ..write(obj.name)
       ..writeByte(2)
-      ..write(obj.matinitstk)
+      ..write(obj.consumption)
       ..writeByte(3)
+      ..write(obj.matinitstk)
+      ..writeByte(4)
       ..write(obj.thresold);
   }
 

@@ -12,7 +12,7 @@ class Matdetails extends StatelessWidget {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
-
+    // var units = context.watch<Materialitem>();
     return Scaffold(
       appBar: AppBar(title: Text("Material Details")),
       body: Consumer<AddmatProvider>(
@@ -35,6 +35,11 @@ class Matdetails extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        _item("Unit", materialItem.name, w),
+                        _divider(),
+
+                        _item("Unit", materialItem.name, w),
+                        _divider(),
                         _item(
                           "Current Stock",
                           materialItem.matinitstk.toString(),
