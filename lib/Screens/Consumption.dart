@@ -86,7 +86,10 @@ class _ConsMatState extends State<ConsMat> {
                             selecteditem!,
                             Pcs,
                           );
+                          Qtycontroller.clear();
+                          Navigator.pop(context);
                         },
+
                         Bcolor: Appcolor.Flow,
                         text: "Start",
                       ),
