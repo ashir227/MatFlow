@@ -27,43 +27,53 @@ class MatlistScr extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: w * 0.02),
         child: Consumer<AddmatProvider>(
           builder: (context, pro, _) {
-            return ListView.builder(
-              itemCount: pro.material.length,
-              itemBuilder: (context, index) {
-                final item = pro.material[index];
-                return Column(
-                  children: [
-                    SizedBox(height: h * 0.02),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Material"),
-                        Text("Available"),
-                        Text("Status"),
-                      ],
-                    ),
-                    ListTile(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                Matdetails(materialItem: item),
-                          ),
-                        );
-                      },
-                      // leading: ,
-                      title: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            return Column(
+              children: [
+                Padding(
+                  padding: EdgeInsetsGeometry.symmetric(horizontal: w * 0.02),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Material"),
+                      Text("Available"),
+                      Text("Status"),
+                    ],
+                  ),
+                ),
+
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: pro.material.length,
+                    itemBuilder: (context, index) {
+                      final item = pro.material[index];
+                      return Column(
                         children: [
-                          Text(pro.material[index].name),
-                          matStatus(item),
+                          ListTile(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      Matdetails(materialItem: item),
+                                ),
+                              );
+                            },
+
+                            title: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(pro.material[index].name),
+                                Text("${pro.material[index].matinitstk}"),
+                                matStatus(item),
+                              ],
+                            ),
+                          ),
                         ],
-                      ),
-                    ),
-                  ],
-                );
-              },
+                      );
+                    },
+                  ),
+                ),
+              ],
             );
           },
         ),
