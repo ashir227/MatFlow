@@ -36,10 +36,10 @@ class MatlistScr extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Material"),
-                      Text("Available"),
-                      Text("Status"),
-                      Text("Remove"),
+                      Expanded(flex: 3, child: Text("Material")),
+                      Expanded(flex: 2, child: Text("Available")),
+                      Expanded(flex: 2, child: Text("Status")),
+                      Expanded(child: Text("Remove")),
                     ],
                   ),
                 ),
@@ -65,11 +65,20 @@ class MatlistScr extends StatelessWidget {
                             title: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(pro.material[index].name),
-                                Text("${pro.material[index].matinitstk}"),
-                                matStatus(item),
+                                Expanded(
+                                  flex: 3,
+                                  child: Text(pro.material[index].name),
+                                ),
+                                Expanded(
+                                  flex: 2,
+                                  child: Text(
+                                    "${pro.material[index].matinitstk}",
+                                  ),
+                                ),
+                                Expanded(flex: 3, child: matStatus(item)),
                               ],
                             ),
+
                             trailing: IconButton(
                               onPressed: () {
                                 context.read<AddmatProvider>().deletematerial(
