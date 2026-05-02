@@ -11,17 +11,20 @@ class MatlistScr extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double w = MediaQuery.of(context).size.width;
+    double h = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Titletext(txt: "Material Item"),
-        toolbarHeight: 100,
+        toolbarHeight: h * 0.12,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(6),
         ),
         backgroundColor: Appcolor.Mat,
       ),
       body: Container(
+        padding: EdgeInsets.symmetric(horizontal: w * 0.02),
         child: Consumer<AddmatProvider>(
           builder: (context, pro, _) {
             return ListView.builder(
@@ -30,7 +33,15 @@ class MatlistScr extends StatelessWidget {
                 final item = pro.material[index];
                 return Column(
                   children: [
-                    Row(children: []),
+                    SizedBox(height: h * 0.02),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Material"),
+                        Text("Available"),
+                        Text("Status"),
+                      ],
+                    ),
                     ListTile(
                       onTap: () {
                         Navigator.push(
