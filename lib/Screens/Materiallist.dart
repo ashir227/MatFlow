@@ -29,6 +29,8 @@ class MatlistScr extends StatelessWidget {
           builder: (context, pro, _) {
             return Column(
               children: [
+                SizedBox(height: h * 0.01),
+
                 Padding(
                   padding: EdgeInsetsGeometry.symmetric(horizontal: w * 0.02),
                   child: Row(
@@ -37,10 +39,11 @@ class MatlistScr extends StatelessWidget {
                       Text("Material"),
                       Text("Available"),
                       Text("Status"),
+                      Text("Remove"),
                     ],
                   ),
                 ),
-
+                SizedBox(height: h * 0.01),
                 Expanded(
                   child: ListView.builder(
                     itemCount: pro.material.length,
@@ -66,6 +69,14 @@ class MatlistScr extends StatelessWidget {
                                 Text("${pro.material[index].matinitstk}"),
                                 matStatus(item),
                               ],
+                            ),
+                            trailing: IconButton(
+                              onPressed: () {
+                                context.read<AddmatProvider>().deletematerial(
+                                  item,
+                                );
+                              },
+                              icon: Icon(Icons.delete_forever),
                             ),
                           ),
                         ],

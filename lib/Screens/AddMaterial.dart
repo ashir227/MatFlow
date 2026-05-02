@@ -130,6 +130,7 @@ class _AddMaterialState extends State<AddMaterial> {
                             );
                             print("Name : ${matnamecontroller.text}");
                             print("Unit : $selectedUnit");
+
                             context.read<AddmatProvider>().addmaterial(
                               newmatitem,
                             );

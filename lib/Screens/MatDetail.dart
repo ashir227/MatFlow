@@ -70,23 +70,6 @@ class Matdetails extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                // Delete Button
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: w * 0.05),
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        context.read<AddmatProvider>().deletematerial(
-                          materialItem,
-                        );
-                        Navigator.pop(context);
-                      },
-                      child: Text("Delete"),
-                    ),
-                  ),
-                ),
               ],
             ),
           );
