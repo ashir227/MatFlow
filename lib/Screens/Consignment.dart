@@ -64,7 +64,13 @@ class _ConsignmentState extends State<Consignment> {
 
                   AddMTextfield(
                     validator: (value) {
-                      if (value == null || value.isEmpty) {}
+                      if (value == null || value.isEmpty) {
+                        return "Please enter Qty";
+                      }
+                      final qty = double.parse(Qtycontrol.text);
+                      if (qty <= 0) {
+                        return "Enter positive value";
+                      }
                     },
                     controller: Qtycontrol,
                     txt: "Consignment QTY",
@@ -79,6 +85,7 @@ class _ConsignmentState extends State<Consignment> {
                           return;
                         }
                         double qty = double.parse(Qtycontrol.text);
+
                         context.read<AddmatProvider>().addconsign(
                           selecteditem!,
                           qty,

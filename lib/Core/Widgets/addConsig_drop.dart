@@ -10,6 +10,7 @@ class MaterialDropDown extends StatelessWidget {
 
   const MaterialDropDown({
     super.key,
+
     required this.items,
     required this.selectedItem,
     required this.onChanged,
@@ -27,6 +28,12 @@ class MaterialDropDown extends StatelessWidget {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(11)),
       ),
       value: selectedItem,
+      validator: (value) {
+        if (selectedItem == null) {
+          return "Please select material";
+        }
+        return null;
+      },
       items: items.map((item) {
         return DropdownMenuItem(value: item, child: Text(item.name));
       }).toList(),
