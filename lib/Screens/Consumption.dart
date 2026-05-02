@@ -81,18 +81,27 @@ class _ConsMatState extends State<ConsMat> {
                       CustomButton.elevatedB(
                         onPressed: () {
                           if (_formkey.currentState!.validate()) {
-                            if (selecteditem == null) {
-                              print("Select material");
-                              return;
+                            double pcs = double.parse(Qtycontroller.text);
+                            String? result = context
+                                .read<AddmatProvider>()
+                                .addconsume(selecteditem!, pcs);
+                            if (result != null) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  backgroundColor: Appcolor.Mat,
+                                  content: Text(
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    "$result",
+                                  ),
+                                ),
+                              );
+                            } else {
+                              Qtycontroller.clear();
+                              Navigator.pop(context);
                             }
                           }
-                          double Pcs = double.parse(Qtycontroller.text);
-                          context.read<AddmatProvider>().addconsume(
-                            selecteditem!,
-                            Pcs,
-                          );
-                          Qtycontroller.clear();
-                          Navigator.pop(context);
                         },
 
                         Bcolor: Appcolor.Flow,
