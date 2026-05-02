@@ -39,7 +39,8 @@ class MatlistScr extends StatelessWidget {
                       Expanded(flex: 3, child: Text("Material")),
                       Expanded(flex: 2, child: Text("Available")),
                       Expanded(flex: 2, child: Text("Status")),
-                      Expanded(child: Text("Remove")),
+                      // Expanded(child: Text("Remove")),
+                      SizedBox(width: 40),
                     ],
                   ),
                 ),
@@ -75,7 +76,7 @@ class MatlistScr extends StatelessWidget {
                                     "${pro.material[index].matinitstk}",
                                   ),
                                 ),
-                                Expanded(flex: 3, child: matStatus(item)),
+                                Expanded(flex: 2, child: matStatus(item)),
                               ],
                             ),
 
