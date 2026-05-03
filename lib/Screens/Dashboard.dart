@@ -17,7 +17,12 @@ class DashBoard extends StatelessWidget {
       backgroundColor: Appcolor.background,
       appBar: AppBar(backgroundColor: Appcolor.Mat),
       drawer: AppDrawer(),
-      body: Column(children: [Dcard(context)]),
+      body: Column(
+        children: [
+          Row(children: [Dcard(context), Dcard(context)]),
+          Dcard(context),
+        ],
+      ),
     );
   }
 }
