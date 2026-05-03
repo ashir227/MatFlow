@@ -17,11 +17,13 @@ class DashBoard extends StatelessWidget {
       backgroundColor: Appcolor.background,
       appBar: AppBar(backgroundColor: Appcolor.Mat),
       drawer: AppDrawer(),
-      body: Column(
-        children: [
-          Row(children: [Dcard(context), Dcard(context)]),
-          Dcard(context),
-        ],
+      body: Container(
+        color: Colors.yellow,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [Dcard(context)],
+        ),
       ),
     );
   }
