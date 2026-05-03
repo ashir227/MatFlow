@@ -13,83 +13,121 @@ class MatlistScr extends StatelessWidget {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Titletext(txt: "Material Item"),
         toolbarHeight: h * 0.12,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.circular(6),
-        ),
         backgroundColor: Appcolor.Mat,
       ),
-      body: Container(
-        padding: EdgeInsets.symmetric(horizontal: w * 0.02),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: w * 0.03),
         child: Consumer<AddmatProvider>(
           builder: (context, pro, _) {
             return Column(
               children: [
                 SizedBox(height: h * 0.01),
 
-                Padding(
-                  padding: EdgeInsetsGeometry.symmetric(horizontal: w * 0.02),
+                /// HEADER
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: h * 0.01),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(flex: 3, child: Text("Material")),
+                      Expanded(flex: 4, child: Text("Material")),
                       Expanded(flex: 2, child: Text("Available")),
                       Expanded(flex: 2, child: Text("Status")),
-                      // Expanded(child: Text("Remove")),
-                      SizedBox(width: 40),
+                      Expanded(flex: 1, child: Text("")),
                     ],
                   ),
                 ),
+
                 SizedBox(height: h * 0.01),
+
+                /// LIST
                 Expanded(
                   child: ListView.builder(
                     itemCount: pro.material.length,
                     itemBuilder: (context, index) {
                       final item = pro.material[index];
-                      return Column(
-                        children: [
-                          ListTile(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      Matdetails(materialItem: item),
-                                ),
-                              );
-                            },
 
-                            title: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Expanded(
-                                  flex: 3,
-                                  child: Text(pro.material[index].name),
-                                ),
-                                Expanded(
-                                  flex: 2,
-                                  child: Text(
-                                    "${pro.material[index].matinitstk}",
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => Matdetails(materialItem: item),
+                            ),
+                          );
+                        },
+
+                        child: Container(
+                          margin: EdgeInsets.symmetric(vertical: h * 0.008),
+                          padding: EdgeInsets.symmetric(
+                            vertical: h * 0.015,
+                            horizontal: w * 0.01,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(w * 0.02),
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 4,
+                                color: Colors.grey.shade300,
+                              ),
+                            ],
+                          ),
+
+                          /// ROW (SAFE VERSION)
+                          child: Row(
+                            children: [
+                              /// Material
+                              Expanded(
+                                flex: 4,
+                                child: Text(
+                                  item.name,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: w * 0.035,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                Expanded(flex: 2, child: matStatus(item)),
-                              ],
-                            ),
+                              ),
 
-                            trailing: IconButton(
-                              onPressed: () {
-                                context.read<AddmatProvider>().deletematerial(
-                                  item,
-                                );
-                              },
-                              icon: Icon(Icons.delete_forever),
-                            ),
+                              /// Available
+                              Expanded(
+                                flex: 2,
+                                child: Text(
+                                  item.matinitstk.toString(),
+                                  style: TextStyle(fontSize: w * 0.035),
+                                ),
+                              ),
+
+                              /// Status
+                              Expanded(
+                                flex: 2,
+                                child: matStatus(item, w * 0.03),
+                              ),
+
+                              /// DELETE ONLY
+                              Expanded(
+                                flex: 1,
+                                child: IconButton(
+                                  icon: Icon(
+                                    Icons.delete,
+                                    color: Colors.red,
+                                    size: w * 0.05,
+                                  ),
+                                  onPressed: () {
+                                    context
+                                        .read<AddmatProvider>()
+                                        .deletematerial(item);
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       );
                     },
                   ),
@@ -103,14 +141,23 @@ class MatlistScr extends StatelessWidget {
   }
 }
 
-Widget matStatus(Materialitem itemz) {
-  return Text(
-    itemz.matinitstk < itemz.thresold ? "Low" : "OK",
-    style: TextStyle(
-      fontWeight: FontWeight.w600,
-      color: itemz.matinitstk < itemz.thresold
-          ? Colors.red
-          : const Color.fromARGB(255, 68, 160, 71),
+/// STATUS WIDGET
+Widget matStatus(Materialitem item, double fontSize) {
+  bool isLow = item.matinitstk < item.thresold;
+
+  return Container(
+    padding: EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+    decoration: BoxDecoration(
+      color: isLow ? Colors.red.shade100 : Colors.green.shade100,
+      borderRadius: BorderRadius.circular(6),
+    ),
+    child: Text(
+      isLow ? "Low" : "OK",
+      style: TextStyle(
+        fontSize: fontSize,
+        fontWeight: FontWeight.w600,
+        color: isLow ? Colors.red : Colors.green,
+      ),
     ),
   );
 }
