@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:matflow/Core/Widgets/Textfield.dart';
 import 'package:matflow/Screens/drawer.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/models/material_item.dart';
+import 'package:matflow/providers/addmatlist.dart';
+import 'package:provider/provider.dart';
 
 class DashBoard extends StatelessWidget {
   const DashBoard({super.key});
@@ -11,8 +14,7 @@ class DashBoard extends StatelessWidget {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
-    Materialitem? items;
-    var qtys = items!.name.length;
+    final matqty = context.watch<AddmatProvider>().material.length;
     return Scaffold(
       backgroundColor: Appcolor.background,
       appBar: AppBar(backgroundColor: Appcolor.Mat),
@@ -31,7 +33,9 @@ class DashBoard extends StatelessWidget {
             ),
             child: Padding(
               padding: EdgeInsetsGeometry.all(w * 0.05),
-              child: Column(children: [Text("Total Material"), Text("$qtys")]),
+              child: Column(
+                children: [Text("Total Material"), Text("$matqty")],
+              ),
             ),
           ),
         ],
