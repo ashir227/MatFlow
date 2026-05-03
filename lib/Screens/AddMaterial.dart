@@ -128,16 +128,27 @@ class _AddMaterialState extends State<AddMaterial> {
                               thresold: int.parse(minstkcontroller.text),
                               consumption: double.parse(consumpcontroller.text),
                             );
-                            print("Name : ${matnamecontroller.text}");
-                            print("Unit : $selectedUnit");
 
-                            context.read<AddmatProvider>().addmaterial(
-                              newmatitem,
-                            );
-                            matnamecontroller.clear();
-                            consumpcontroller.clear();
-                            initstkcontroller.clear();
-                            minstkcontroller.clear();
+                            String? result = context
+                                .read<AddmatProvider>()
+                                .addmaterial(newmatitem);
+                            if (result == null) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  backgroundColor: Appcolor.Flow,
+                                  content: Text(
+                                    "Material Added Sucessful",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              );
+                              matnamecontroller.clear();
+                              consumpcontroller.clear();
+                              initstkcontroller.clear();
+                              minstkcontroller.clear();
+                            }
                           }
                         },
 
