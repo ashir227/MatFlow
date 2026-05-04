@@ -7,7 +7,7 @@ Widget Dcard(BuildContext context) {
   double h = MediaQuery.of(context).size.height;
   final matqty = context.watch<AddmatProvider>().material.length;
   return Card(
-    margin: EdgeInsets.symmetric(horizontal: w * 0.2, vertical: h * 0.02),
+    margin: EdgeInsets.zero,
     color: Colors.white,
     elevation: 2,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),

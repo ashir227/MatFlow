@@ -20,7 +20,6 @@ class DashBoard extends StatelessWidget {
       body: Container(
         color: Colors.yellow,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [Dcard(context)],
         ),
