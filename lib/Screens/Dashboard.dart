@@ -13,15 +13,35 @@ class DashBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var w = MediaQuery.of(context).size.width;
+    var h = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Appcolor.background,
       appBar: AppBar(backgroundColor: Appcolor.Mat),
       drawer: AppDrawer(),
       body: Container(
-        color: Colors.yellow,
+        // color: Colors.yellow,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [Dcard(context)],
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(child: Dcard(context)),
+                SizedBox(width: w * 0.01),
+                Expanded(child: Dcard(context)),
+              ],
+            ),
+            SizedBox(height: h * 0.05),
+
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(child: Dcard(context)),
+                SizedBox(width: w * 0.01),
+                Expanded(child: Dcard(context)),
+              ],
+            ),
+          ],
         ),
       ),
     );
