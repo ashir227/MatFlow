@@ -21,14 +21,16 @@ class DashBoard extends StatelessWidget {
       drawer: AppDrawer(),
       body: Container(
         // color: Colors.yellow,
+        margin: EdgeInsets.only(top: h * 0.05),
         child: Column(
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Expanded(child: Dcard(context)),
+                Dcard(context, "Total\nMaterial"),
                 SizedBox(width: w * 0.01),
-                Expanded(child: Dcard(context)),
+                Dcard(context, "Total Stock"),
               ],
             ),
             SizedBox(height: h * 0.05),
@@ -36,9 +38,9 @@ class DashBoard extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(child: Dcard(context)),
+                Dcard(context, "Low \n Stock"),
                 SizedBox(width: w * 0.01),
-                Expanded(child: Dcard(context)),
+                Dcard(context, "Plainning"),
               ],
             ),
           ],
