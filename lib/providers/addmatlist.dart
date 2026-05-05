@@ -51,8 +51,17 @@ class AddmatProvider extends ChangeNotifier {
     }
   }
 
-  unitcount(Materialitem units) {
-    var s = units.unit;
-    if (units == "Kg") {}
+  void unitcount() {
+    double totalpcs = 0;
+    double totalkg = 0;
+    for (var units in material) {
+      if (units.unit == "KG") {
+        totalkg = units.matinitstk + totalkg;
+        notifyListeners();
+      } else {
+        totalpcs = units.matinitstk + totalpcs;
+        notifyListeners();
+      }
+    }
   }
 }

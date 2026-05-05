@@ -12,6 +12,7 @@ Widget Dcard(
   double w = MediaQuery.of(context).size.width;
   double h = MediaQuery.of(context).size.height;
   final matqty = context.watch<AddmatProvider>().material.length;
+  final unitcnt = context.watch<AddmatProvider>().unitcount;
   return SizedBox(
     height: h * 0.16,
     width: w * 0.46,
