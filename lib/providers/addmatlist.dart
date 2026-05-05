@@ -51,17 +51,18 @@ class AddmatProvider extends ChangeNotifier {
     }
   }
 
-  void unitcount() {
-    double totalpcs = 0;
-    double totalkg = 0;
-    for (var units in material) {
-      if (units.unit == "KG") {
-        totalkg = units.matinitstk + totalkg;
-        notifyListeners();
-      } else {
-        totalpcs = units.matinitstk + totalpcs;
-        notifyListeners();
+  Map<String, double> unitcount() {
+    double kg = 0;
+    double pcs = 0;
+
+    for (var item in material) {
+      if (item.unit.toLowerCase() == "KG") {
+        kg += item.matinitstk;
+      } else if (item.unit.toLowerCase() == "Pcs") {
+        pcs += item.matinitstk;
       }
     }
+
+    return {"KG": kg, "Pcs": pcs};
   }
 }

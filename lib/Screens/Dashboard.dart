@@ -14,6 +14,8 @@ class DashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var matcount = context.watch<AddmatProvider>().material.length;
+    var unitc = context.watch<AddmatProvider>().unitcount();
+
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -39,10 +41,10 @@ class DashBoard extends StatelessWidget {
                 SizedBox(width: w * 0.01),
                 Dcard(
                   context,
-                  "Total\nMaterial",
+                  "Total\nStock",
                   Icons.abc,
                   Appcolor.Flow,
-                  "ff",
+                  "$unitc",
                 ),
               ],
             ),
