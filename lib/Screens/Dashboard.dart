@@ -13,6 +13,7 @@ class DashBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var matcount = context.watch<AddmatProvider>().material.length;
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -28,19 +29,32 @@ class DashBoard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Dcard(context, "Total\nMaterial"),
+                Dcard(
+                  context,
+                  "Total\nMaterial",
+                  Icons.abc,
+                  Appcolor.Flow,
+                  "$matcount",
+                ),
                 SizedBox(width: w * 0.01),
-                Dcard(context, "Total Stock"),
+                Dcard(
+                  context,
+                  "Total\nMaterial",
+                  Icons.abc,
+                  Appcolor.Flow,
+                  "ff",
+                ),
               ],
             ),
             SizedBox(height: h * 0.05),
 
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Dcard(context, "Low \n Stock"),
+                Dcard(context, "Low \n Stock", Icons.abc, Appcolor.Flow, "ff"),
                 SizedBox(width: w * 0.01),
-                Dcard(context, "Plainning"),
+                Dcard(context, "Plainning", Icons.abc, Appcolor.Flow, "ff"),
               ],
             ),
           ],

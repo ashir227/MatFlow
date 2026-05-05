@@ -50,4 +50,9 @@ class AddmatProvider extends ChangeNotifier {
       return "Not enough stock available";
     }
   }
+
+  unitcount(Materialitem units) {
+    var s = units.unit;
+    if (units == "Kg") {}
+  }
 }
