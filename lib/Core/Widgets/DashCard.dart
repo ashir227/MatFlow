@@ -23,7 +23,7 @@ Widget Dcard(
       shadowColor: const Color.fromARGB(255, 207, 205, 205),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Padding(
-        padding: EdgeInsets.all(w * 0.04),
+        padding: EdgeInsets.all(w * 0.03),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
