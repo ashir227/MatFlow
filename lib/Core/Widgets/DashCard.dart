@@ -38,11 +38,7 @@ Widget Dcard(
                   ),
                 ),
                 SizedBox(width: w * 0.04),
-                Icon(
-                  icon,
-                  color: iconColor,
-                  shadows: [Colors.amber, Colors.white],
-                ),
+                Icon(icon, color: iconColor),
               ],
             ),
             Text(
