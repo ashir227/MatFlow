@@ -34,7 +34,7 @@ class DashBoard extends StatelessWidget {
                 Dcard(
                   context,
                   "Total\nMaterial",
-                  Icons.abc,
+                  Icons.tv,
                   Appcolor.Flow,
                   "$matcount",
                 ),
@@ -42,9 +42,9 @@ class DashBoard extends StatelessWidget {
                 Dcard(
                   context,
                   "Total\nStock",
-                  Icons.abc,
+                  Icons.balance_rounded,
                   Appcolor.Flow,
-                  "${totals["KG"]} KG \n ${totals["Pcs"]} Pcs",
+                  "${totals["KG"]} KG\n${totals["Pcs"]} Pcs",
                 ),
               ],
             ),
