@@ -34,7 +34,7 @@ class DashBoard extends StatelessWidget {
                 Dcard(
                   context,
                   "Total\nMaterial",
-                  Icons.tv,
+                  Icons.monitor,
                   Appcolor.Flow,
                   "$matcount",
                 ),
@@ -54,9 +54,21 @@ class DashBoard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Dcard(context, "Low \n Stock", Icons.abc, Appcolor.Flow, "ff"),
+                Dcard(
+                  context,
+                  "Low \n Stock",
+                  Icons.warning,
+                  Appcolor.Flow,
+                  "ff",
+                ),
                 SizedBox(width: w * 0.01),
-                Dcard(context, "Plainning", Icons.abc, Appcolor.Flow, "ff"),
+                Dcard(
+                  context,
+                  "Plainning",
+                  Icons.monitor_heart,
+                  Appcolor.Flow,
+                  "ff",
+                ),
               ],
             ),
           ],
