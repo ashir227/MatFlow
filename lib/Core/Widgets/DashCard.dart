@@ -43,7 +43,7 @@ Widget Dcard(
             ),
             Text(
               value,
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
             ),
           ],
         ),

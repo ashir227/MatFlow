@@ -14,7 +14,7 @@ class DashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var matcount = context.watch<AddmatProvider>().material.length;
-    var unitc = context.watch<AddmatProvider>().unitcount();
+    final totals = context.watch<AddmatProvider>().unitcount();
 
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
@@ -44,7 +44,7 @@ class DashBoard extends StatelessWidget {
                   "Total\nStock",
                   Icons.abc,
                   Appcolor.Flow,
-                  "$unitc",
+                  "${totals["KG"]} KG \n ${totals["Pcs"]} Pcs",
                 ),
               ],
             ),

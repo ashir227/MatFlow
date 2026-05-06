@@ -33,13 +33,13 @@ class AddmatProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addconsign(Materialitem item, double qty) {
+  void addconsign(Materialitem item, int qty) {
     item.matinitstk = item.matinitstk + qty;
     item.save();
     notifyListeners();
   }
 
-  String? addconsume(Materialitem item, double pcs) {
+  String? addconsume(Materialitem item, int pcs) {
     var PcsCon = pcs * item.consumption;
     if (PcsCon <= item.matinitstk) {
       item.matinitstk = item.matinitstk - PcsCon;
@@ -51,9 +51,9 @@ class AddmatProvider extends ChangeNotifier {
     }
   }
 
-  Map<String, double> unitcount() {
-    double kg = 0;
-    double pcs = 0;
+  Map<String, int> unitcount() {
+    int kg = 0;
+    int pcs = 0;
 
     for (var item in material) {
       if (item.unit.toLowerCase() == "KG") {

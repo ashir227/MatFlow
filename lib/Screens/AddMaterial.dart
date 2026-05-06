@@ -124,9 +124,9 @@ class _AddMaterialState extends State<AddMaterial> {
                             Materialitem newmatitem = Materialitem(
                               name: matnamecontroller.text,
                               unit: selectedUnit!,
-                              matinitstk: double.parse(initstkcontroller.text),
+                              matinitstk: int.parse(initstkcontroller.text),
                               thresold: int.parse(minstkcontroller.text),
-                              consumption: double.parse(consumpcontroller.text),
+                              consumption: int.parse(consumpcontroller.text),
                             );
 
                             String? result = context

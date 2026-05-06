@@ -67,7 +67,7 @@ class _ConsMatState extends State<ConsMat> {
                           if (value == null || value.isEmpty) {
                             return ("Enter valid Qty");
                           }
-                          double? numm = double.tryParse(value);
+                          int? numm = int.tryParse(value);
                           if (numm! < 0) {
                             return ("Enter Positive value");
                           }
@@ -95,7 +95,7 @@ class _ConsMatState extends State<ConsMat> {
                             //   );
                             //   return;
                             // }
-                            double pcs = double.parse(Qtycontroller.text);
+                            int pcs = int.parse(Qtycontroller.text);
                             String? result = context
                                 .read<AddmatProvider>()
                                 .addconsume(selecteditem!, pcs);

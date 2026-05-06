@@ -67,7 +67,7 @@ class _ConsignmentState extends State<Consignment> {
                       if (value == null || value.isEmpty) {
                         return "Please enter Qty";
                       }
-                      final qty = double.parse(Qtycontrol.text);
+                      final qty = int.parse(Qtycontrol.text);
                       if (qty <= 0) {
                         return "Enter positive value";
                       }
@@ -84,7 +84,7 @@ class _ConsignmentState extends State<Consignment> {
                           print("Select material");
                           return;
                         }
-                        double qty = double.parse(Qtycontrol.text);
+                        int qty = int.parse(Qtycontrol.text);
 
                         context.read<AddmatProvider>().addconsign(
                           selecteditem!,

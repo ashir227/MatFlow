@@ -9,9 +9,9 @@ class Materialitem extends HiveObject {
   String unit;
 
   @HiveField(2)
-  double consumption;
+  int consumption;
   @HiveField(3)
-  double matinitstk;
+  int matinitstk;
   @HiveField(4)
   int thresold;
 
