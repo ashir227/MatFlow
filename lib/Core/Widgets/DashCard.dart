@@ -3,7 +3,7 @@ import 'package:matflow/providers/addmatlist.dart';
 import 'package:provider/provider.dart';
 
 Widget Dcard(
-  SizedBox sizex,
+  // SizedBox sizex,
   BuildContext context,
   String txt,
   IconData icon,

@@ -1,5 +1,8 @@
+import 'dart:nativewrappers/_internal/vm/lib/ffi_patch.dart';
+
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/DashCard.dart';
+import 'package:matflow/Core/Widgets/DashQuickAct.dart';
 import 'package:matflow/Core/Widgets/Textfield.dart';
 import 'package:matflow/Screens/drawer.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
@@ -78,7 +81,17 @@ class DashBoard extends StatelessWidget {
             SizedBox(height: h * 0.10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text("dd")],
+              children: [
+                Text(
+                  "Quick Action",
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 25),
+                ),
+                Row(
+                  children: [
+                    QuickAct(context, "txt", Icons.add, Appcolor.gradientEnd),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
