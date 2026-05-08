@@ -37,7 +37,7 @@ Widget Dcard(
                     color: const Color.fromARGB(255, 142, 141, 141),
                   ),
                 ),
-                SizedBox(width: w * 0.04),
+                SizedBox(width: w * 0.16),
                 Icon(icon, color: iconColor),
               ],
             ),

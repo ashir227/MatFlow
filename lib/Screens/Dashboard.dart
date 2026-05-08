@@ -20,7 +20,11 @@ class DashBoard extends StatelessWidget {
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Appcolor.background,
-      appBar: AppBar(backgroundColor: Appcolor.Mat),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Dashboard", style: TextStyle(color: Appcolor.background)),
+        backgroundColor: Appcolor.Mat,
+      ),
       drawer: AppDrawer(),
       body: Container(
         // color: Colors.yellow,
@@ -44,7 +48,7 @@ class DashBoard extends StatelessWidget {
                   "Total\nStock",
                   Icons.balance_rounded,
                   const Color.fromARGB(182, 36, 190, 77),
-                  "${totals["KG"]} KG\n${totals["Pcs"]} Pcs",
+                  "${totals["kg"]} KG\n${totals["pcs"]} Pcs",
                 ),
               ],
             ),
@@ -70,6 +74,11 @@ class DashBoard extends StatelessWidget {
                   "ff",
                 ),
               ],
+            ),
+            SizedBox(height: h * 0.10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text("dd")],
             ),
           ],
         ),

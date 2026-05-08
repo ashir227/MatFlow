@@ -56,13 +56,13 @@ class AddmatProvider extends ChangeNotifier {
     int pcs = 0;
 
     for (var item in material) {
-      if (item.unit.toLowerCase() == "KG") {
+      if (item.unit.toLowerCase() == "kg") {
         kg += item.matinitstk;
-      } else if (item.unit.toLowerCase() == "Pcs") {
+      } else if (item.unit.toLowerCase() == "pcs") {
         pcs += item.matinitstk;
       }
     }
 
-    return {"KG": kg, "Pcs": pcs};
+    return {"kg": kg, "pcs": pcs};
   }
 }

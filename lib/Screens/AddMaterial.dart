@@ -123,7 +123,7 @@ class _AddMaterialState extends State<AddMaterial> {
                           if (_formKey.currentState!.validate()) {
                             Materialitem newmatitem = Materialitem(
                               name: matnamecontroller.text,
-                              unit: selectedUnit!,
+                              unit: selectedUnit!.toLowerCase(),
                               matinitstk: int.parse(initstkcontroller.text),
                               thresold: int.parse(minstkcontroller.text),
                               consumption: int.parse(consumpcontroller.text),
