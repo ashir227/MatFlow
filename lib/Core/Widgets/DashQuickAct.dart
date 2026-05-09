@@ -19,7 +19,7 @@ Widget QuickAct(
     width: w * 0.30,
     child: Card(
       margin: EdgeInsets.zero,
-      color: const Color.fromARGB(255, 71, 196, 190),
+      color: const Color.fromARGB(255, 50, 78, 138),
       elevation: 3.5,
       shadowColor: const Color.fromARGB(255, 207, 205, 205),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -36,10 +36,12 @@ Widget QuickAct(
                 SizedBox(height: h * 0.01),
 
                 Text(
+                  textAlign: TextAlign.center,
                   txt,
                   style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    color: const Color.fromARGB(255, 142, 141, 141),
+                    fontSize: w * 0.038,
+                    fontWeight: FontWeight.w600,
+                    color: Appcolor.background,
                   ),
                 ),
                 SizedBox(width: w * 0.12),
