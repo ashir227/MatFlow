@@ -85,9 +85,23 @@ class DashBoard extends StatelessWidget {
                     "Quick Action",
                     style: TextStyle(fontWeight: FontWeight.w700, fontSize: 25),
                   ),
+                  SizedBox(height: h * 0.02),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      // QuickAct(context, "txt", Icons.add, Appcolor.gradientEnd),
+                      QuickAct(context, "txt", Icons.add, Appcolor.gradientEnd),
+                      QuickAct(
+                        context,
+                        "txt",
+                        Icons.content_paste_go_outlined,
+                        Appcolor.gradientEnd,
+                      ),
+                      QuickAct(
+                        context,
+                        "txt",
+                        Icons.pentagon_rounded,
+                        Appcolor.gradientEnd,
+                      ),
                     ],
                   ),
                 ],

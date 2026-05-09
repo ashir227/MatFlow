@@ -15,7 +15,7 @@ Widget QuickAct(
   final unitcnt = context.watch<AddmatProvider>().unitcount;
   return SizedBox(
     height: h * 0.16,
-    width: w * 0.46,
+    width: w * 0.30,
     child: Card(
       margin: EdgeInsets.zero,
       color: Colors.white,
@@ -28,9 +28,9 @@ Widget QuickAct(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Row(
+            Column(
               children: [
-                Icon(icon, color: iconColor, size: 27),
+                Icon(icon, color: iconColor, size: w * 0.05),
 
                 Text(
                   txt,
@@ -39,7 +39,7 @@ Widget QuickAct(
                     color: const Color.fromARGB(255, 142, 141, 141),
                   ),
                 ),
-                SizedBox(width: w * 0.15),
+                SizedBox(width: w * 0.12),
               ],
             ),
           ],
