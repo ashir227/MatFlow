@@ -16,36 +16,33 @@ Widget QuickAct(
   return SizedBox(
     height: h * 0.16,
     width: w * 0.46,
-    child: GestureDetector(
-      onTap: () {},
-      child: Card(
-        margin: EdgeInsets.zero,
-        color: Colors.white,
-        elevation: 3.5,
-        shadowColor: const Color.fromARGB(255, 207, 205, 205),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        child: Padding(
-          padding: EdgeInsets.all(w * 0.03),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                children: [
-                  Icon(icon, color: iconColor, size: 27),
+    child: Card(
+      margin: EdgeInsets.zero,
+      color: Colors.white,
+      elevation: 3.5,
+      shadowColor: const Color.fromARGB(255, 207, 205, 205),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      child: Padding(
+        padding: EdgeInsets.all(w * 0.03),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                Icon(icon, color: iconColor, size: 27),
 
-                  Text(
-                    txt,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: const Color.fromARGB(255, 142, 141, 141),
-                    ),
+                Text(
+                  txt,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: const Color.fromARGB(255, 142, 141, 141),
                   ),
-                  SizedBox(width: w * 0.15),
-                ],
-              ),
-            ],
-          ),
+                ),
+                SizedBox(width: w * 0.15),
+              ],
+            ),
+          ],
         ),
       ),
     ),

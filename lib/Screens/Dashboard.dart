@@ -1,5 +1,3 @@
-import 'dart:nativewrappers/_internal/vm/lib/ffi_patch.dart';
-
 import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/DashCard.dart';
 import 'package:matflow/Core/Widgets/DashQuickAct.dart';
@@ -29,71 +27,73 @@ class DashBoard extends StatelessWidget {
         backgroundColor: Appcolor.Mat,
       ),
       drawer: AppDrawer(),
-      body: Container(
-        // color: Colors.yellow,
-        margin: EdgeInsets.only(top: h * 0.05),
-        child: Column(
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Dcard(
-                  context,
-                  "Total\nMaterial",
-                  Icons.monitor,
-                  const Color.fromARGB(255, 46, 178, 240),
-                  "$matcount",
-                ),
-                SizedBox(width: w * 0.01),
-                Dcard(
-                  context,
-                  "Total\nStock",
-                  Icons.balance_rounded,
-                  const Color.fromARGB(182, 19, 114, 44),
-                  "${totals["kg"]} KG\n${totals["pcs"]} Pcs",
-                ),
-              ],
-            ),
-            SizedBox(height: h * 0.05),
+      body: SingleChildScrollView(
+        child: Container(
+          // color: Colors.yellow,
+          margin: EdgeInsets.only(top: h * 0.05),
+          child: Column(
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Dcard(
+                    context,
+                    "Total\nMaterial",
+                    Icons.monitor,
+                    const Color.fromARGB(255, 46, 178, 240),
+                    "$matcount",
+                  ),
+                  SizedBox(width: w * 0.01),
+                  Dcard(
+                    context,
+                    "Total\nStock",
+                    Icons.balance_rounded,
+                    const Color.fromARGB(182, 19, 114, 44),
+                    "${totals["kg"]} KG\n${totals["pcs"]} Pcs",
+                  ),
+                ],
+              ),
+              SizedBox(height: h * 0.05),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Dcard(
-                  context,
-                  "Low \n Stock",
-                  Icons.warning,
-                  const Color.fromARGB(255, 231, 103, 103),
-                  "ff",
-                ),
-                SizedBox(width: w * 0.01),
-                Dcard(
-                  context,
-                  "Plainning",
-                  Icons.monitor_heart,
-                  const Color.fromARGB(255, 198, 198, 97),
-                  "ff",
-                ),
-              ],
-            ),
-            SizedBox(height: h * 0.10),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Quick Action",
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 25),
-                ),
-                Row(
-                  children: [
-                    QuickAct(context, "txt", Icons.add, Appcolor.gradientEnd),
-                  ],
-                ),
-              ],
-            ),
-          ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Dcard(
+                    context,
+                    "Low \n Stock",
+                    Icons.warning,
+                    const Color.fromARGB(255, 231, 103, 103),
+                    "ff",
+                  ),
+                  SizedBox(width: w * 0.01),
+                  Dcard(
+                    context,
+                    "Plainning",
+                    Icons.monitor_heart,
+                    const Color.fromARGB(255, 198, 198, 97),
+                    "ff",
+                  ),
+                ],
+              ),
+              SizedBox(height: h * 0.10),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Quick Action",
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 25),
+                  ),
+                  Row(
+                    children: [
+                      // QuickAct(context, "txt", Icons.add, Appcolor.gradientEnd),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
