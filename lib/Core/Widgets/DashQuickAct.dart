@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:matflow/Core/theme/colors.dart';
 import 'package:matflow/providers/addmatlist.dart';
 import 'package:provider/provider.dart';
 
@@ -18,19 +19,21 @@ Widget QuickAct(
     width: w * 0.30,
     child: Card(
       margin: EdgeInsets.zero,
-      color: Colors.white,
+      color: const Color.fromARGB(255, 71, 196, 190),
       elevation: 3.5,
       shadowColor: const Color.fromARGB(255, 207, 205, 205),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Padding(
         padding: EdgeInsets.all(w * 0.03),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
             Column(
               children: [
-                Icon(icon, color: iconColor, size: w * 0.05),
+                SizedBox(height: h * 0.02),
+                Icon(icon, color: iconColor, size: w * 0.09),
+                SizedBox(height: h * 0.01),
 
                 Text(
                   txt,

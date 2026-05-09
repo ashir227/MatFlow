@@ -89,18 +89,18 @@ class DashBoard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      QuickAct(context, "txt", Icons.add, Appcolor.gradientEnd),
+                      QuickAct(context, "txt", Icons.add, Appcolor.background),
                       QuickAct(
                         context,
                         "txt",
                         Icons.content_paste_go_outlined,
-                        Appcolor.gradientEnd,
+                        Appcolor.background,
                       ),
                       QuickAct(
                         context,
                         "txt",
                         Icons.pentagon_rounded,
-                        Appcolor.gradientEnd,
+                        Appcolor.background,
                       ),
                     ],
                   ),
