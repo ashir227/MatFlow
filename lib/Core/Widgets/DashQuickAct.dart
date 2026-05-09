@@ -17,37 +17,51 @@ Widget QuickAct(
   return SizedBox(
     height: h * 0.16,
     width: w * 0.30,
-    child: Card(
-      margin: EdgeInsets.zero,
-      color: const Color.fromARGB(255, 50, 78, 138),
-      elevation: 3.5,
-      shadowColor: const Color.fromARGB(255, 207, 205, 205),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      child: Padding(
-        padding: EdgeInsets.all(w * 0.03),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Column(
-              children: [
-                SizedBox(height: h * 0.02),
-                Icon(icon, color: iconColor, size: w * 0.09),
-                SizedBox(height: h * 0.01),
-
-                Text(
-                  textAlign: TextAlign.center,
-                  txt,
-                  style: TextStyle(
-                    fontSize: w * 0.038,
-                    fontWeight: FontWeight.w600,
-                    color: Appcolor.background,
+    child: GestureDetector(
+      onTap: () {},
+      child: Card(
+        margin: EdgeInsets.zero,
+        color: Appcolor.background,
+        elevation: 3.5,
+        shadowColor: const Color.fromARGB(255, 207, 205, 205),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        child: Padding(
+          padding: EdgeInsets.all(w * 0.03),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Column(
+                children: [
+                  SizedBox(height: h * 0.02),
+                  Icon(
+                    icon,
+                    color: iconColor,
+                    size: w * 0.09,
+                    shadows: [
+                      Shadow(
+                        color: Colors.deepPurple.withOpacity(0.5),
+                        blurRadius: 6.0,
+                        offset: Offset(3.0, 2.0),
+                      ),
+                    ],
                   ),
-                ),
-                SizedBox(width: w * 0.12),
-              ],
-            ),
-          ],
+                  SizedBox(height: h * 0.01),
+
+                  Text(
+                    textAlign: TextAlign.center,
+                    txt,
+                    style: TextStyle(
+                      fontSize: w * 0.038,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.black,
+                    ),
+                  ),
+                  SizedBox(width: w * 0.12),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     ),
