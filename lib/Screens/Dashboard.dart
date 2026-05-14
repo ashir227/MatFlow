@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:matflow/Core/Widgets/DashCard.dart';
 import 'package:matflow/Core/Widgets/DashQuickAct.dart';
 import 'package:matflow/Core/Widgets/Textfield.dart';
+import 'package:matflow/Screens/Consignment.dart';
 import 'package:matflow/Screens/drawer.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
@@ -90,6 +91,14 @@ class DashBoard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Consignment(),
+                            ),
+                          );
+                        },
                         child: QuickAct(
                           context,
                           "Add Consignment",
