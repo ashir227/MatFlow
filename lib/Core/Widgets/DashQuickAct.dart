@@ -9,7 +9,7 @@ Widget QuickAct(
   String txt,
   IconData icon,
   Color iconColor,
-  CallbackAction callback,
+  final VoidCallback onTap,
 ) {
   double w = MediaQuery.of(context).size.width;
   double h = MediaQuery.of(context).size.height;
@@ -19,9 +19,8 @@ Widget QuickAct(
     height: h * 0.16,
     width: w * 0.30,
     child: GestureDetector(
-      onTap: () {
-        callback;
-      },
+      onTap: onTap,
+
       child: Card(
         margin: EdgeInsets.zero,
         color: Appcolor.background,
