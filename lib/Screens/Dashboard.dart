@@ -3,6 +3,8 @@ import 'package:matflow/Core/Widgets/DashCard.dart';
 import 'package:matflow/Core/Widgets/DashQuickAct.dart';
 import 'package:matflow/Core/Widgets/Textfield.dart';
 import 'package:matflow/Screens/Consignment.dart';
+import 'package:matflow/Screens/Consumption.dart';
+import 'package:matflow/Screens/Materiallist.dart';
 import 'package:matflow/Screens/drawer.dart';
 import 'package:matflow/Core/buttons/elevated.dart';
 import 'package:matflow/Core/theme/colors.dart';
@@ -90,7 +92,11 @@ class DashBoard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      GestureDetector(
+                      QuickAct(
+                        context,
+                        "Add Consignment",
+                        Icons.add,
+                        Appcolor.Mat,
                         onTap: () {
                           Navigator.push(
                             context,
@@ -99,20 +105,28 @@ class DashBoard extends StatelessWidget {
                             ),
                           );
                         },
-                        child: QuickAct(
-                          context,
-                          "Add Consignment",
-                          Icons.add,
-                          Appcolor.Mat,
-                        ),
                       ),
                       QuickAct(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ConsMat()),
+                          );
+                        },
                         context,
                         "Add Consumption",
                         Icons.content_paste_go_outlined,
                         Appcolor.Mat,
                       ),
                       QuickAct(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MatlistScr(),
+                            ),
+                          );
+                        },
                         context,
                         "Mat List",
                         Icons.hexagon_outlined,

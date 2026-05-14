@@ -8,9 +8,9 @@ Widget QuickAct(
   BuildContext context,
   String txt,
   IconData icon,
-  Color iconColor,
-  final VoidCallback onTap,
-) {
+  Color iconColor, {
+  required VoidCallback onTap,
+}) {
   double w = MediaQuery.of(context).size.width;
   double h = MediaQuery.of(context).size.height;
   final matqty = context.watch<AddmatProvider>().material.length;
