@@ -89,11 +89,13 @@ class DashBoard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      QuickAct(
-                        context,
-                        "Add Consignment",
-                        Icons.add,
-                        Appcolor.Mat,
+                      GestureDetector(
+                        child: QuickAct(
+                          context,
+                          "Add Consignment",
+                          Icons.add,
+                          Appcolor.Mat,
+                        ),
                       ),
                       QuickAct(
                         context,

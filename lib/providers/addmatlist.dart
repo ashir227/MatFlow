@@ -57,9 +57,12 @@ class AddmatProvider extends ChangeNotifier {
 
     for (var item in material) {
       if (item.unit.toLowerCase() == "kg") {
-        kg += item.matinitstk;
+        kg = kg + item.matinitstk;
+        item.save();
       } else if (item.unit.toLowerCase() == "pcs") {
-        pcs += item.matinitstk;
+        pcs = pcs + item.matinitstk;
+        item.save();
+        // loadmaterial();
       }
     }
 
