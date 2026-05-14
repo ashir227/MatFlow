@@ -11,6 +11,7 @@ class CustomButton {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
+      
         padding: Padding ?? EdgeInsets.symmetric(horizontal: 125, vertical: 11),
 
         backgroundColor: Bcolor,

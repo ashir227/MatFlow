@@ -8,7 +8,7 @@ class Loginprovider extends ChangeNotifier {
   // String? password;
   bool login(String name, String desig, String password) {
     if (password == "1234") {
-      var box = Hive.box("loginbox");
+      var box = Hive.box("loginbox"); 
       box.put("islogin", true);
 
       username(name);

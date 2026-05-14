@@ -104,7 +104,7 @@ class DashBoard extends StatelessWidget {
                       QuickAct(
                         context,
                         "Mat List",
-                        Icons.blur_circular,
+                        Icons.hexagon_outlined,
                         Appcolor.Mat,
                       ),
                     ],
