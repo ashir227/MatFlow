@@ -13,6 +13,7 @@ import 'package:matflow/Screens/Consignment.dart';
 import 'package:matflow/Screens/Consumption.dart';
 import 'package:matflow/Screens/Dashboard.dart';
 import 'package:matflow/Screens/Materiallist.dart';
+import 'package:matflow/Screens/Plainning.dart';
 import 'package:matflow/providers/image_pick.dart';
 import 'package:matflow/providers/loginProvider.dart';
 import 'package:provider/provider.dart';
@@ -157,6 +158,12 @@ class AppDrawer extends StatelessWidget {
             icon: Icon(Icons.add_circle_outline_outlined, color: Appcolor.Flow),
           ),
           DrawTextField(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MatPlanScr()),
+              );
+            },
             text: "Planning / Forecast",
 
             icon: Icon(Icons.calendar_month_rounded, color: Appcolor.Flow),

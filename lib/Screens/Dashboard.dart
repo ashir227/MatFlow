@@ -21,13 +21,6 @@ class DashBoard extends StatefulWidget {
 
 class _DashBoardState extends State<DashBoard> {
   @override
-  void initState() {
-    super.initState();
-    Future.microtask(() {
-      context.read<AddmatProvider>().loadmaterial();
-    });
-  }
-
   Widget build(BuildContext context) {
     var matcount = context.watch<AddmatProvider>().material.length;
     final totals = context.watch<AddmatProvider>().unitcount();
