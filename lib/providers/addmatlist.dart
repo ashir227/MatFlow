@@ -68,4 +68,12 @@ class AddmatProvider extends ChangeNotifier {
 
     return {"kg": kg, "pcs": pcs};
   }
+
+  lowstk() {
+    var lowmatcount = 0;
+
+    for (var item in material) {
+      if (item.matinitstk < item.thresold) {}
+    }
+  }
 }
