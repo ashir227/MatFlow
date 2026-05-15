@@ -73,7 +73,11 @@ class AddmatProvider extends ChangeNotifier {
     var lowmatcount = 0;
 
     for (var item in material) {
-      if (item.matinitstk < item.thresold) {}
+      if (item.matinitstk < item.thresold) {
+        lowmatcount++;
+        // item.save();
+      }
     }
+    return lowmatcount;
   }
 }

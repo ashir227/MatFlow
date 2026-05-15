@@ -19,6 +19,7 @@ class DashBoard extends StatelessWidget {
   Widget build(BuildContext context) {
     var matcount = context.watch<AddmatProvider>().material.length;
     final totals = context.watch<AddmatProvider>().unitcount();
+    var lowcount = context.watch<AddmatProvider>().lowstk();
 
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
@@ -68,7 +69,7 @@ class DashBoard extends StatelessWidget {
                     "Low \n Stock",
                     Icons.warning,
                     const Color.fromARGB(255, 231, 103, 103),
-                    "ff",
+                    "$lowcount",
                   ),
                   SizedBox(width: w * 0.01),
                   Dcard(
