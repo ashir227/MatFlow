@@ -12,10 +12,22 @@ import 'package:matflow/models/material_item.dart';
 import 'package:matflow/providers/addmatlist.dart';
 import 'package:provider/provider.dart';
 
-class DashBoard extends StatelessWidget {
+class DashBoard extends StatefulWidget {
   const DashBoard({super.key});
 
   @override
+  State<DashBoard> createState() => _DashBoardState();
+}
+
+class _DashBoardState extends State<DashBoard> {
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(() {
+      context.read<AddmatProvider>().loadmaterial();
+    });
+  }
+
   Widget build(BuildContext context) {
     var matcount = context.watch<AddmatProvider>().material.length;
     final totals = context.watch<AddmatProvider>().unitcount();
