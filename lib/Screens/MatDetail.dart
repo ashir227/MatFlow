@@ -63,9 +63,9 @@ class Matdetails extends StatelessWidget {
                           materialItem.thresold.toString(),
                           w,
                         ),
-                        _divider(),
+                        // _divider(),
 
-                        _item("Max Producible Pieces", "${prodcue}", w),
+                        // _item("Max Producible Pieces", "${prodcue}", w),
                       ],
                     ),
                   ),

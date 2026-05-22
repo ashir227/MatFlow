@@ -51,12 +51,14 @@ class _DashBoardState extends State<DashBoard> {
                     "Total\nMaterial",
                     Icons.monitor,
                     const Color.fromARGB(255, 46, 178, 240),
+
                     "$matcount",
                   ),
                   SizedBox(width: w * 0.01),
                   Dcard(
                     context,
                     "Total\nStock",
+
                     Icons.balance_rounded,
                     const Color.fromARGB(182, 19, 114, 44),
                     "${totals["kg"]} KG\n${totals["pcs"]} Pcs",

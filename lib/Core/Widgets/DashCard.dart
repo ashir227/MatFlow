@@ -42,6 +42,7 @@ Widget Dcard(
                 Icon(icon, color: iconColor, size: 27),
               ],
             ),
+
             Text(
               value,
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),

@@ -80,4 +80,15 @@ class AddmatProvider extends ChangeNotifier {
     }
     return lowmatcount;
   }
+
+  reqmat() {
+    var stk = 0;
+    for (var item in material) {
+      if (item.matinitstk < item.thresold) {
+        stk += (item.thresold - item.matinitstk);
+      }
+    }
+
+    return stk;
+  }
 }
