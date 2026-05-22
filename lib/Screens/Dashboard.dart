@@ -73,7 +73,7 @@ class _DashBoardState extends State<DashBoard> {
                 children: [
                   Dcard(
                     context,
-                    "Low \n Stock",
+                    "Low \nStock",
                     Icons.warning,
                     const Color.fromARGB(255, 231, 103, 103),
                     "$lowcount",
