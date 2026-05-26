@@ -17,7 +17,7 @@ void main() async {
 
   await Hive.initFlutter(directory.path);
   Hive.registerAdapter(MaterialitemAdapter());
-  // Open Hive box
+  // Open Hive s
   await Hive.openBox("loginbox");
   await Hive.openBox("imgbox");
   await Hive.openBox("materials");
